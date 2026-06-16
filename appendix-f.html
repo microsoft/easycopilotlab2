@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F. CLI 런타임 해부 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub active"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="부록-f-cli-에이전트-런타임-해부">부록 F. CLI 에이전트 런타임
+해부</h1>
+<blockquote>
+<p>본문이 “무엇을·왜”라면, 이 부록은 “<strong>그 속에서 실제로 무슨 일이
+벌어지나</strong>”다. 신버전 코어가 코딩 하네스 위에 섰다는 심화 노트의
+결론을, 세션 컨테이너·파일 처리·메모리 수준까지 한 단계 더 내려가
+해부한다. 기준: 2026년 6월. 미리보기 단계의 내부 구현이라 <strong>세부는
+버전에 따라 바뀔 수 있다.</strong> 알아 두면 코봇의 행동을 더 정확히
+이해하고 디버깅할 수 있지만, 코봇을 키우는 데 반드시 필요한 것은
+아니다.</p>
+<p>읽을 사람: “리치 파일을 어떻게 정확히 만들어 내는가”, “토큰이 왜 안
+터지는가”, “세션이 끝나면 기억은 어디로 가는가”가 궁금한 사람.</p>
+</blockquote>
+<hr />
+<h2 id="f1-세션--격리-컨테이너-한-개">F1. 세션 = 격리 컨테이너 한
+개</h2>
+<p>신버전 에이전트는 사용자 세션마다 <strong>격리된 리눅스 컨테이너 한
+개</strong>를 띄워 그 안에서 도구·코드·파일을 돌린다. 세션이 끝나면
+컨테이너는 통째로 폐기된다. 이 구조가 보안과 ‘리치 파일 생성’ 두 가지를
+동시에 떠받친다.</p>
+<p>컨테이너 안의 작업 공간은 대략 이렇게 나뉜다.</p>
+<table>
+<thead>
+<tr>
+<th>위치</th>
+<th>역할</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/app/</code></td>
+<td><strong>AI 작업 공간</strong> — 업로드(uploads)·생성물(created)·작업
+스크래치(workspace)·스킬(skills)</td>
+</tr>
+<tr>
+<td>표준 런타임</td>
+<td>Python 3.12 표준 라이브러리 등 코드 실행에 필요한 런타임</td>
+</tr>
+<tr>
+<td>임베딩 캐시</td>
+<td>KnowledgeSearch·대화 검색용 로컬 임베딩 모델 캐시</td>
+</tr>
+</tbody>
+</table>
+<p>에이전트(LLM)는 이 컨테이너 안에서 <strong>최소 권한
+사용자</strong>로 움직인다. 즉 “샌드박스에서 일하는 인턴”이다. 작업과
+산출은 <code>/app</code> 안에서만 일어나고, 컨테이너 바깥이나 다른
+세션에는 손댈 수 없다.</p>
+<!-- GATE:runtime-engine 공개확인후해제 -->
+
+<blockquote>
+<p><strong>엔진실은 잠겨 있다(내부 구조)</strong> 컨테이너 안에는 LLM이
+노는 샌드박스 영역과, <strong>오케스트레이션 엔진 본체</strong>가 분리돼
+있다. 엔진 본체와 그 통신 소켓이 놓인 경로는 샌드박스 사용자에게
+<strong>접근이 차단</strong>된다. 설령 프롬프트 인젝션으로 샌드박스
+사용자가 탈취되더라도 엔진 본체·다른 세션에는 닿지 못한다. 본문 “같은
+거버넌스 경계 안에서 실행”이 컨테이너 격리로 물리화된 셈이다. (엔진의
+내부 코드네임·경로는 버전에 따라 바뀌며, 외부 데모 영상에서 일부가
+노출된 바 있으나 공식 표기는 아니다.)</p>
+</blockquote>
+<!-- /GATE:runtime-engine -->
+
+<blockquote>
+<p><strong>왜 이렇게까지 격리하나</strong> 에이전트에게 코드 실행 능력을
+주는 순간, 그 능력은 곧 공격 표면이 된다. ‘인턴은 샌드박스에서만 놀고,
+기계실은 잠근다’는 이중 구조라야 “코드도 돌리고 파일도 만드는” 강력함과
+“기업이 안심할 수 있는” 안전을 동시에 가질 수 있다.</p>
+</blockquote>
+<h2 id="f2-가장-크게-바뀐-것--rag에서-코드-실행으로">F2. 가장 크게 바뀐
+것 — RAG에서 ‘코드 실행’으로</h2>
+<p>부록 전체에서 가장 중요한 한 절이다. 클래식과 신버전은 <strong>참고
+자료를 처리하는 패러다임 자체가 다르다.</strong></p>
+<ul>
+<li><strong>클래식 = 검색 기반(RAG).</strong> 사용자 질문을 검색 쿼리로
+바꿔, 인덱스에서 <strong>유사한 텍스트 조각(청크)</strong> 을 Top-K로
+꺼내 컨텍스트에 넣는다. 청크에 없는 내용은 답하지 못하고, 집계·정렬 같은
+‘계산’은 근사치에 그친다.</li>
+<li><strong>신버전 CLI = 실행 기반(Code + Tool).</strong> 원본 파일을
+<code>/app</code>에 <strong>실제로 내려받아</strong> Python으로 직접
+연다. 전체 행을 집계·변환·정렬하고, 그 <strong>결과 요약만</strong> LLM
+컨텍스트로 올린다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>클래식 (RAG)</th>
+<th>신버전 CLI (코드 실행)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>파일 처리</td>
+<td>청크 검색</td>
+<td>다운로드 → Python 처리</td>
+</tr>
+<tr>
+<td>원본 접근</td>
+<td>인덱스 경유(간접)</td>
+<td>직접</td>
+</tr>
+<tr>
+<td>대용량</td>
+<td>청크 크기에 제한</td>
+<td>Python으로 유연 처리</td>
+</tr>
+<tr>
+<td>정확도</td>
+<td>청크 누락 가능(근사치)</td>
+<td>전체 집계(정확값)</td>
+</tr>
+<tr>
+<td>코드 실행</td>
+<td>불가</td>
+<td>가능</td>
+</tr>
+<tr>
+<td>파일 생성</td>
+<td>불가</td>
+<td>PPT·HTML·CSV·Excel 등</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>같은 질문, 다른 처리</strong> Q. “제조사별 평균 가격은?”</p>
+<ul>
+<li>RAG → 관련 텍스트 조각을 긁어 모아 <strong>근사치</strong>를
+답한다.</li>
+<li>CLI → <code>df.groupby('Manufacturer')['Price'].mean()</code> 를
+실행해 <strong>정확값</strong>을 답한다.</li>
+</ul>
+</blockquote>
+<p>이것이 본문 “일을 끝내는 동료”가 말이 아니라 숫자로 증명되는
+지점이다. 검색이 ‘비슷한 걸 찾아 주는 일’이라면, 코드 실행은 ‘정확히
+계산해 주는 일’이다.</p>
+<h2 id="f3-엑셀은-왜-토큰이-안-터지나--print만-본다">F3. 엑셀은 왜
+토큰이 안 터지나 — print()만 본다</h2>
+<p>“1,000행짜리 엑셀을 통째로 넣으면 토큰이 폭발하지 않나?” 신버전은
+그렇게 하지 않는다. <strong>LLM이 파일을 직접 읽지 않는다.</strong> 대신
+Python이 파일을 처리하고, LLM은 그 코드가 출력한
+<strong><code>print()</code> 결과만</strong> 본다.</p>
+<ul>
+<li><strong>나쁜 패턴</strong>(클래식적 사고): 파일 내용 → LLM
+컨텍스트에 직접 투입 → 토큰 폭발.</li>
+<li><strong>좋은 패턴</strong>(신버전): 파일 → Python 처리 →
+<strong>결과 요약만</strong> → LLM.</li>
+</ul>
+<p>바이너리 파일(xlsx·pptx·pdf)은 본문 스니펫 없이
+<strong>경로만</strong> 컨텍스트에 들어간다. 1,000행 × 34열짜리
+시트라도, LLM이 보는 것은 집계 결과 수백 토큰뿐이다. 컨텍스트 낭비가 0에
+가깝다. 본문 6장(화면)·이 책 전반의 ‘리치 파일 산출’이 이 구조 덕에
+가능하다. 그리고 같은 원리로, 워커별 탭이 나뉜 엑셀 보고서 한 장도 코드
+몇 줄로 만들어 낸다.</p>
+<h2 id="f4-사전-설치된-python-스택--pip-install-없이">F4. 사전 설치된
+Python 스택 — pip install 없이</h2>
+<p>코드 실행 능력의 실체는 결국 <strong>무슨 라이브러리가 깔려
+있느냐</strong>다. 신버전 컨테이너는 <strong>외부
+접속·<code>pip install</code>이 불가</strong>한 대신, 실무에 필요한
+패키지를 <strong>미리 다 넣어 둔다.</strong> 조직이 검증하지 않은 패키지
+설치를 막아 보안을 지키면서도, 일은 되게 하는 절충이다.</p>
+<table>
+<thead>
+<tr>
+<th>분류</th>
+<th>대표 패키지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 분석</td>
+<td>pandas · numpy · pyarrow</td>
+</tr>
+<tr>
+<td>시각화</td>
+<td>matplotlib · seaborn · plotly</td>
+</tr>
+<tr>
+<td>문서 처리</td>
+<td>openpyxl · pypdf · pdfplumber · python-docx · python-pptx ·
+markitdown</td>
+</tr>
+<tr>
+<td>이미지</td>
+<td>Pillow · OpenCV · (OCR)</td>
+</tr>
+<tr>
+<td>웹/HTTP</td>
+<td>requests · httpx · fastapi · uvicorn</td>
+</tr>
+<tr>
+<td>AI/ML·임베딩</td>
+<td>onnxruntime · fastembed · tokenizers</td>
+</tr>
+<tr>
+<td>수학/과학</td>
+<td>sympy · scipy</td>
+</tr>
+<tr>
+<td>유틸</td>
+<td>rich · typer · pydantic · jinja2 · mcp</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>현장에서</strong> “이 파일을 PDF로 요약해 줘”가 되는 이유가
+이 표에 있다. 문서 처리 패키지(pypdf·python-docx·python-pptx)와 데이터
+패키지(pandas)가 이미 깔려 있어, 코봇은 코드를 ‘써서 돌리기만’ 하면
+된다. 없는 패키지를 요구하는 작업은 실패하니, 안 될 때는 “지원 범위 밖
+라이브러리인가”를 먼저 의심하자.</p>
+</blockquote>
+<h2 id="f5-메모리--ram은-컨테이너-hdd는-클라우드">F5. 메모리 — RAM은
+컨테이너, HDD는 클라우드</h2>
+<p>“세션이 끝나면 컨테이너가 폐기된다는데, 그럼 기억은 어디로 가나?”
+메모리는 <strong>두 층</strong>으로 나뉜다. 컨테이너
+안(<code>/app</code>)은 <strong>임시(RAM)</strong>, Microsoft 365
+클라우드는 <strong>영구(HDD)</strong> 라고 보면 된다.</p>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>위치</th>
+<th>수명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>임시·세션 한정</strong></td>
+<td>컨테이너 <code>/app/</code> — 대화 턴 기록(세션 DB),
+업로드·작업·생성물</td>
+<td>세션 종료 시 <strong>소멸</strong></td>
+</tr>
+<tr>
+<td><strong>영구</strong></td>
+<td>M365 클라우드 — Copilot 메모리(서버사이드), 사용자 프로필·설정,
+SharePoint·Exchange 데이터</td>
+<td><strong>유지</strong>, 다음 세션에서 활용</td>
+</tr>
+</tbody>
+</table>
+<p>세션이 시작되면 클라우드 쪽 영구 메모리가 컨테이너로
+<strong>주입</strong>되고, 세션이 끝나면 컨테이너 쪽 임시 메모리는
+DB까지 <strong>삭제</strong>된다. 그래서 <strong>세션 간에 남길 기억은
+반드시 클라우드 쪽</strong>(본문 10장의 Memory 기능)에 있어야 한다.
+이것이 본문에서 Memory를 ‘opt-in 지속 맥락’이라 부른 이유의 밑바닥
+구조다.</p>
+<h3 id="대화에도-rag를-건다--3계층-회상">대화에도 RAG를 건다 — 3계층
+회상</h3>
+<p>흥미로운 점은, F2에서 본 ‘문서에 거는 RAG’를 <strong>대화
+자체에도</strong> 건다는 것이다. 컨텍스트 윈도우가 부족할 때, 과거 대화
+턴을 검색해 정확히 꺼내 온다.</p>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>무엇</th>
+<th>동작</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>단기</strong></td>
+<td>컨텍스트 윈도우</td>
+<td>최근 N턴만 유지 · 가장 빠름</td>
+</tr>
+<tr>
+<td><strong>중기</strong></td>
+<td>세션 내 검색 인덱스</td>
+<td>윈도우를 넘어가면, 세션 전체 턴을 로컬 벡터로 검색해 <strong>관련
+턴만</strong> 꺼냄</td>
+</tr>
+<tr>
+<td><strong>장기</strong></td>
+<td>M365 클라우드</td>
+<td>세션 종료 후 요약·메모리로 영구 보존</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>실제 동작 — “아까 만든 PPT 파일명이 뭐였지?”</strong> 그
+정보는 이미 컨텍스트 윈도우 밖으로 밀려났다. 그러면 코어가 세션 검색
+인덱스에서 해당 턴을 찾아 컨텍스트에 <strong>동적으로 끼워
+넣고</strong>, “telecom_executive_report.pptx 입니다”라고 답한다. 저장이
+목적이 아니라, <strong>필요할 때 정확히 회상</strong>하는 것이
+목적이다(심화 노트의 ‘컨텍스트는 유한 자원’과 같은 원리).</p>
+</blockquote>
+<h2 id="f6-claude-code와-무엇이-같고-무엇이-다른가">F6. Claude Code와
+무엇이 같고 무엇이 다른가</h2>
+<p>신버전 CLI 에이전트는 Claude Code 같은 개발자용 코딩 에이전트와
+<strong>같은 하네스 철학</strong>의 산물이다. 차이는 기술이 아니라
+<strong>목적</strong>에 있다.</p>
+<table>
+<thead>
+<tr>
+<th>공통점(둘 다 하네스다)</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tool Loop</td>
+<td>bash·grep·view·edit·python을 반복 호출</td>
+</tr>
+<tr>
+<td>Sandbox 격리</td>
+<td>리눅스 컨테이너 · 최소 권한 · 엔진 영역 차단</td>
+</tr>
+<tr>
+<td>Observation</td>
+<td>실행 결과가 다시 컨텍스트로 피드백</td>
+</tr>
+<tr>
+<td>Human-in-the-loop</td>
+<td>매 응답을 확인 · 무단 자동 실행 없음</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>Claude Code</th>
+<th>Studio CLI 에이전트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>주 사용자</td>
+<td>개발자 — 자동화 극대화</td>
+<td>일반/준개발 사용자 — 거버넌스 우선</td>
+</tr>
+<tr>
+<td>리소스 관리</td>
+<td>로컬·외부 시스템으로 도구 관리</td>
+<td><strong>중앙에서 배포·관리</strong>되는 지식·데이터·도구만 사용</td>
+</tr>
+<tr>
+<td>지향</td>
+<td>로컬 개발·코드 작업</td>
+<td>기업 업무 에이전트 — 관리·감사 가능</td>
+</tr>
+</tbody>
+</table>
+<p>요약하면, <strong>Microsoft는 업계가 검증한 코딩 하네스를 가져오되,
+‘기업이 통제할 수 있는’ 울타리 안으로 다시 구현했다.</strong> 외부
+생태계(마크다운 스킬 표준 등)의 개방성은 취하고, 보안·거버넌스는
+엔터프라이즈 향으로 조인 것이다. 이 한 문장이 신버전 전체를 관통하는
+설계 철학이다.</p>
+<h2 id="f7-이-부록을-한-장으로">F7. 이 부록을 한 장으로</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>요점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>세션 = <strong>격리 컨테이너 한 개</strong>. LLM은 샌드박스 인턴,
+엔진실은 잠겨 있다. 세션 종료 시 컨테이너는 폐기.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>참고 자료 처리가 <strong>RAG → 코드 실행</strong>으로 바뀌었다.
+근사치에서 정확값으로.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LLM은 파일을 직접 읽지 않고 <strong>Python의 print() 결과만</strong>
+본다 → 대용량도 토큰이 안 터진다.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>필요한 Python 패키지가 <strong>사전 설치</strong>돼
+있다(<code>pip install</code> 불가). 이게 ‘리치 파일 산출’의 실체.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>메모리는 <strong>임시(컨테이너)·영구(M365 클라우드)</strong> 2층.
+세션 간 기억은 반드시 클라우드. 대화에도 RAG를 걸어 3계층으로 회상.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Claude Code와 <strong>같은 하네스, 다른 목적</strong>. 개방성은
+취하고 거버넌스로 조인 엔터프라이즈 재구현.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="appendix-e.html">← E. 능력 카탈로그</a><a class="pg pg-next" href="appendix-g.html">G. 용어 빠른 풀이 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

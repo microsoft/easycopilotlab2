@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3장. 두 갈래 길 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub active"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="3장-두-갈래-길--agent냐-workflow냐">3장. 두 갈래 길 — Agent냐
+Workflow냐</h1>
+<p>Copilot Studio를 처음 열면 화면은 군더더기 없이 단 하나를 묻는다.
+“무엇을 만들고 싶으신가요(what do you want to build?)” 그리고 답할 수
+있는 길은 둘뿐이다. <strong>Agent</strong>와 <strong>Workflow</strong>.
+이 단순한 두 갈래가 사실은 제품 전체의 세계관을 압축하고 있다. 1장에서
+살아남았다고 한 '일하는 봇 둘'이 바로 여기, 첫 화면에서 모습을
+드러낸다.</p>
+<p>이 장의 목표는 어느 쪽이 더 좋은지를 가르는 것이 아니다. 둘은 우열이
+아니라 역할이 다르다. Agent는 모호한 목표를 받아 판단하는 길이고,
+Workflow는 정해진 절차를 흔들림 없이 실행하는 길이다. 앞으로 우리는
+전자를 <strong>코봇</strong>, 후자를 <strong>플로봇</strong>이라 부른다.
+이 두 이름을 손에 쥐는 순간, Copilot Studio의 많은 선택지가 갑자기
+단순해진다.</p>
+<h2 id="추론이-운전하는-길-절차가-운전하는-길">추론이 운전하는 길,
+절차가 운전하는 길</h2>
+<p>두 길의 차이는 '무엇이 운전대를 잡는가'로 요약된다.</p>
+<p>Agent는 추론이 운전한다. 목표를 받으면 그때그때 상황을 판단해 다음에
+무엇을 할지 스스로 정한다. 유연하고, 모호한 상황에 강하며, 사람의 말을
+알아듣고 빈틈을 메운다. 대신 매번 답이 조금씩 달라질 수 있다. 같은
+질문에도 어제와 오늘의 대답이 똑같으리란 보장은 없다. 우리는 이 길을
+걷는 봇을 <strong>코봇</strong>이라 부른다. 생각하고 판단하는
+동료다.</p>
+<p>Workflow는 절차가 운전한다. 정해진 순서를 정해진 대로, 한 치의 어긋남
+없이 집행한다. 같은 입력에는 언제나 같은 절차가 적용된다.
+결정론적(deterministic)(같은 입력이면 항상 같은 결과)이고, 신뢰할 수
+있으며, 반복에 강하다. 대신 미리 짜둔 길을 벗어나는 상황 앞에서는
+유연하지 못하다. 이 길을 걷는 봇을 <strong>플로봇</strong>이라 부른다.
+정해진 순서를 어김없이 집행하는 자동 라인이다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>코봇: Agent</th>
+<th>플로봇: Workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>운전대</td>
+<td>추론과 지침</td>
+<td>절차와 조건</td>
+</tr>
+<tr>
+<td>강점</td>
+<td>모호함, 맥락, 판단, 작성</td>
+<td>반복, 승인, 등록, 발송, 감사</td>
+</tr>
+<tr>
+<td>결과</td>
+<td>상황에 맞게 달라질 수 있음</td>
+<td>같은 입력이면 같은 경로</td>
+</tr>
+<tr>
+<td>실패 모습</td>
+<td>그럴듯하지만 빗나간 판단</td>
+<td>예외 상황에서 멈춤</td>
+</tr>
+<tr>
+<td>어울리는 말</td>
+<td>“알아서 정리해줘”</td>
+<td>“항상 이 순서로 처리해줘”</td>
+</tr>
+</tbody>
+</table>
+<p>이 표에서 중요한 줄은 실패 모습이다. 코봇은 유연한 대신 흔들릴 수
+있고, 플로봇은 안정적인 대신 부러질 수 있다. 설계자는 이 둘의 장단점을
+알고 일을 나누어야 한다.</p>
+<h2 id="둘-다-결과물을-향한다">둘 다 결과물을 향한다</h2>
+<p>여기서 놓치지 말아야 할 것이 있다. 코봇과 플로봇은 운전하는 방식이
+다를 뿐, 향하는 곳은 같다. 둘 다 '정보'가 아니라 <strong>동작하는
+결과물</strong>을 만들어낸다는 점에서 한 식구다. 1장에서 말한 “해줘”의
+시대에, 코봇은 판단으로 그 결과물을 만들고 플로봇은 절차로 그 결과물을
+만든다. 답하는 봇의 시대가 끝난 자리를, 이 두 일꾼이 나눠 가진
+셈이다.</p>
+<p>예를 들어 “신제품 출시 프로젝트를 시작해줘”라고 말하면, 코봇은 무엇을
+물어야 하는지, 어떤 산출물이 필요한지, 어떤 순서로 초안을 만들지
+판단한다. 하지만 “매주 금요일 오후 5시에 프로젝트 상태보고를 Teams
+채널에 올리고, 위험도가 높음인 항목은 담당 임원에게 별도 메일을
+보내라”는 요구는 플로봇에게 더 잘 맞는다. 코봇은 보고 내용을 판단하고,
+플로봇은 반복 실행과 발송을 책임진다.</p>
+<blockquote>
+<p><strong>현장에서</strong><br />
+많은 실패는 “AI로 할 일”과 “자동화로 할 일”을 섞어서 생긴다. 보고서의
+핵심 메시지를 잡는 것은 AI적 판단이고, 매주 같은 시간에 지정 채널로
+보내는 것은 자동화다. 전자를 플로봇에게 억지로 맡기면 분기가 끝없이
+늘고, 후자를 코봇에게만 맡기면 실행·권한·감사 기록이 불안해진다.</p>
+</blockquote>
+<blockquote>
+<p><img src="assets/cobot-say-webtoon.png" alt="코봇" /> <strong>코봇
+한마디</strong></p>
+<p>"저는 보고서의 핵심을 잡는 판단에 강하고, 플로봇은 정해진 시간에
+정확히 보내는 절차에 강해요. 일을 끝내려면 누가 운전대를 잡아야 하는지
+먼저 나누면 됩니다!"</p>
+</blockquote>
+<h2 id="새-workflows는-옛-agent-flow가-아니다">새 Workflows는 옛 agent
+flow가 아니다</h2>
+<p>이 장에서 가장 조심해야 할 용어가 있다. 바로
+<strong>Workflow</strong>다. Copilot Studio에는 과거부터 자동화 흐름을
+다루는 기능들이 있었고, 일부는 agent flow라는 이름으로도 불렸다. 그러나
+이 책에서 플로봇이라고 부르는 것은 <strong>2026년 새
+Workflows</strong>다. 옛 agent flow를 새 이름으로 대충 부르는 것이
+아니다.</p>
+<p>새 Workflows는 공개 미리보기로 소개된 별도의 새 자동화 경험이다.
+핵심은 결정론적 자동화와 에이전틱 판단을 한 공간에서 섞는 데 있다.
+2026년 기준 확인된 특징은 통합 비주얼 캔버스, 노드 단위 테스트(inline
+node testing), 버전 기록(version history), 분석(analytics), agent node,
+intelligent actions 같은 요소다. 즉 “조건과 액션을 잇는 자동화”에
+머무르지 않고, 필요한 지점에서 에이전트를 호출해 판단을 맡길 수 있는
+구조로 확장되었다. Power Automate의 클라우드 플로와도 구분된다. 새
+Workflows는 Copilot Studio 안에서 코봇과 한 묶음으로 설계·운영되는
+자동화이고, agent node로 에이전트의 판단까지 끌어들인다.</p>
+<p>옛 방식과 혼동하지 않기 위해 한 줄로 못박자.</p>
+<blockquote>
+<p><strong>이 책의 플로봇 = 새 Workflows(공개 미리보기)</strong><br />
+옛 agent flow는 클래식 계열의 옛 방식으로만 언급한다. 둘은 같은 것으로
+취급하지 않는다.</p>
+</blockquote>
+<p>이 구분은 앞으로 4부에서 결정적으로 중요해진다. 13장은 Workflows
+입문, 14장은 Agent와 Workflow를 서로 엮는 법, 15장은 트리거를 다룬다.
+지금은 “플로봇은 새 Workflows”라는 이름표만 정확히 붙여두면 된다.</p>
+<h2 id="같은-프로젝트-안에-두-종류의-일이-있다">같은 프로젝트 안에 두
+종류의 일이 있다</h2>
+<p>이제 내 일을 둘로 나눠 보자. 러닝 예제인 “코봇, 프로젝트를 맡다”를
+떠올린다. 코봇은 사내 워크숍이나 신제품 출시 같은 프로젝트를 운영해야
+한다. 그 안에는 성격이 전혀 다른 두 종류의 일이 섞여 있다.</p>
+<p>“이 프로젝트의 성공 기준은 무엇인가”, “이 리스크가 출시를 미룰 만큼
+큰가”, “경영진 보고와 실무자 안내의 톤을 어떻게 달리할까”는 매번 상황이
+다르고 판단이 필요하다. 코봇의 일이다. 반면 “예산 승인 요청을 결재선
+순서대로 태운다”, “매주 금요일 오후 5시에 같은 형식으로 상태보고를
+발송한다”, “참석자 명단이 업데이트되면 안내 메일을 보낸다”는 한 번 정한
+절차를 어김없이 반복하면 된다. 플로봇의 일이다.</p>
+<table>
+<thead>
+<tr>
+<th>프로젝트 업무</th>
+<th>더 어울리는 쪽</th>
+<th>이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>프로젝트 목표·범위 정리</td>
+<td>코봇</td>
+<td>모호한 요청을 해석하고 빠진 정보를 물어야 함</td>
+</tr>
+<tr>
+<td>이해관계자별 보고 문안 작성</td>
+<td>코봇</td>
+<td>대상별 톤과 강조점 판단이 필요함</td>
+</tr>
+<tr>
+<td>예산 승인 라우팅</td>
+<td>플로봇</td>
+<td>결재 순서, 권한, 기록이 중요함</td>
+</tr>
+<tr>
+<td>매주 정기 보고 발송</td>
+<td>플로봇</td>
+<td>일정 기반 반복 실행이 필요함</td>
+</tr>
+<tr>
+<td>위험도가 높은 항목만 임원에게 알림</td>
+<td>둘 다</td>
+<td>코봇이 위험도를 판단하고 플로봇이 알림을 실행</td>
+</tr>
+</tbody>
+</table>
+<h2 id="둘은-서로를-부른다">둘은 서로를 부른다</h2>
+<p>그렇다면 둘 중 하나를 골라야 하는가. 그렇지 않다. 가장 중요한 사실은
+두 길이 결국 합류한다는 점이다. 새 Workflows에는 <strong>agent
+node</strong>라는 연결 지점이 있다. 워크플로가 필요한 순간 에이전트를
+불러 판단을 맡기는 자리다. 반대로 “에이전트가 이 흐름을 호출할 때”
+실행되는 Workflow는 에이전트의 도구처럼 추가될 수 있다. 양방향이다.</p>
+<p>이를 사람의 일터에 빗대면, 생각하는 작업자(코봇)와 어김없이 도는
+컨베이어벨트(플로봇)가 한 공장에서 협업하는 그림이다. 작업자가 판단해
+라인에 일을 넘기고, 라인은 막히거나 사람의 판단이 필요한 순간에 작업자를
+부른다. 판단과 절차가 이렇게 맞물릴 때 비로소 진짜 일이 끝난다.</p>
+<p>예를 들어 예산 초안은 코봇의 <code>budget-resource</code> Skill이
+만든다. 코봇은 워크숍 규모, 참석자 수, 장소비, 식음료비, 예비비를 원화로
+정리한다. 그러나 그 예산안을 실제 승인 시스템에 등록하고, 300만 원
+이상이면 팀장과 본부장 승인을 순서대로 태우고, 반려되면 작성자에게 보완
+요청을 보내는 절차는 플로봇이 맡는다. 코봇의 판단과 플로봇의 집행이
+분리될수록 설계는 안전해진다.</p>
+<blockquote>
+<p><img src="assets/cobot-say-webtoon.png" alt="코봇" /> <strong>코봇
+한마디</strong></p>
+<p>"제가 예산안을 판단해 만들면, 플로봇은 승인 순서와 알림을 흔들림 없이
+굴려줘요. 생각하는 일과 집행하는 일을 나누면 팀 전체가 훨씬
+안전해집니다."</p>
+</blockquote>
+<h2 id="어느-길을-고를-것인가">어느 길을 고를 것인가</h2>
+<p>판단 기준은 한 줄로 줄일 수 있다. <strong>모호하면 Agent, 어김없어야
+하면 Workflow.</strong> 상황마다 답이 달라지고 사람의 판단이 필요한
+일이라면 코봇에게, 언제나 똑같이 정확하게 반복돼야 하는 일이라면
+플로봇에게 맡긴다. 그리고 대부분의 경우 코봇 하나로 시작했다가, 반복되는
+절차가 눈에 보이기 시작할 때 플로봇을 붙이는 것이 자연스러운 순서다.</p>
+<p>조금 더 실전적으로는 다음 다섯 질문을 던지면 된다.</p>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>“예”라면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사용자의 요청이 매번 다르게 들어오는가?</td>
+<td>Agent부터 시작한다.</td>
+</tr>
+<tr>
+<td>빠진 정보를 되물어야 하는가?</td>
+<td>Agent가 어울린다.</td>
+</tr>
+<tr>
+<td>같은 입력에 같은 결과가 반드시 필요한가?</td>
+<td>Workflow가 어울린다.</td>
+</tr>
+<tr>
+<td>외부 시스템 등록·승인·발송이 필요한가?</td>
+<td>Tool 또는 Workflow 경계를 먼저 본다.</td>
+</tr>
+<tr>
+<td>감사 기록, 재시도, 실패 분기가 중요한가?</td>
+<td>Workflow로 고정한다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="세-가지-안티패턴">세 가지 안티패턴</h2>
+<p>세 가지 안티패턴만 피하면 길이 선명해진다. 첫째, 모든 것을 코봇에게
+맡기지 않는다. 실제 발송과 승인에는 연결, 권한, 오류 처리, 감사가
+필요하다. 둘째, 모든 것을 플로봇으로 그리지 않는다. 모호한 요청을 전부
+분기로 만들면 자동화는 금세 미로가 된다. 셋째, 옛 agent flow와 새
+Workflows를 섞어 말하지 않는다. 이 책의 플로봇은 새 Workflows다.</p>
+<blockquote>
+<p><img src="assets/cobot-say-webtoon.png" alt="코봇" /> <strong>코봇
+한마디</strong></p>
+<p>"저에게 모든 일을 몰아주면 실행 기록이 약해지고, 플로봇에게 모든
+판단을 맡기면 분기 미로가 생겨요. 모호함은 제가, 어김없는 절차는
+플로봇이 맡는 균형이 핵심입니다!"</p>
+</blockquote>
+<h2 id="핵심-정리">핵심 정리</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>요점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>홈 화면의 두 선택지 Agent·Workflow가 곧 제품의 세계관이다.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Agent(코봇)=추론이 운전·유연·판단. Workflow(플로봇)=절차가
+운전·결정론·신뢰.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>둘은 운전 방식은 달라도 모두 “동작하는 결과물”을 향한다.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>이 책의 플로봇은 2026년 새 Workflows(공개 미리보기)이며, 옛 agent
+flow와 같은 말이 아니다.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>두 길은 agent node와 도구 호출로 서로를 부른다. 이 합류점은
+4부(13~15장)의 핵심이다.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>판단 기준 한 줄: 모호하면 Agent, 어김없어야 하면 Workflow.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="자주-묻는-질문faq">자주 묻는 질문(FAQ)</h2>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>답변</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>처음부터 Agent와 Workflow를 다 만들어야 하나요?</td>
+<td>아니다. 대부분 코봇 하나로 시작하고, 반복 절차가 보일 때 플로봇을
+붙인다. 본격적인 설계는 4부에서 다룬다.</td>
+</tr>
+<tr>
+<td>워크플로가 더 안전하면 전부 워크플로로 하면 안 되나요?</td>
+<td>모호함과 예외가 많은 일은 절차로 다 짤 수 없다. 그런 일은 부러지는
+대신 판단하는 코봇이 맡아야 한다.</td>
+</tr>
+<tr>
+<td>Agent가 판단하면 결과가 매번 달라져도 괜찮나요?</td>
+<td>달라져도 되는 일과 안 되는 일을 구분해야 한다. 보고 문안은 달라져도
+되지만 승인 라우팅은 달라지면 안 된다.</td>
+</tr>
+<tr>
+<td>새 Workflows는 Power Automate와 같은 건가요?</td>
+<td>Power Platform 자동화의 맥락과 이어지지만, 이 책에서는 Copilot
+Studio 새 Workflows의 에이전틱 결합(agent node, intelligent actions
+등)에 초점을 둔다. 세부는 13~15장에서 다룬다.</td>
+</tr>
+<tr>
+<td>agent node는 지금 알아야 하나요?</td>
+<td>이름만 기억하면 된다. Workflow 안에서 에이전트 판단을 끼워 넣는
+연결점이며, 14장에서 본격적으로 다룬다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="다음-장에서는">다음 장에서는</h2>
+<p>두 갈래 길과 그 위를 걷는 두 주인공을 만났다. 그런데 “추론이
+운전한다”는 코봇을, 개발자가 아닌 내가 정말 만들 수 있을까. 다음
+장에서는 그 불안을 정면으로 마주하고, 코봇을 만드는 진짜 진입권이 코딩이
+아니라 무엇인지를 밝힌다.</p>
+<h2 id="실습--코봇-키우기-3단계-종이-실습-두-동료의-일을-가른다">실습 —
+코봇 키우기 3단계 (종이 실습): 두 동료의 일을 가른다</h2>
+<p><img src="assets/diagrams/concept-ch03.png"
+alt="3장까지의 코봇·플로봇 성장" /></p>
+<p><strong>〔이어받기〕</strong> 1장의 “일을 끝내는 동료” 상을 들고
+온다. 이번엔 그 일을 둘로 나눈다.</p>
+<p><strong>2-a. 업무를 카드로 적는다.</strong> 출시 프로젝트의 실제 업무
+8–10개를 한 줄씩 카드로 적는다(예: 리스크 판단, 이해관계자별 맞춤 보고,
+매주 금요일 상태보고 발송, 결재선 태우기 …).</p>
+<p><strong>2-b. 두 더미로 분류한다.</strong> 각 카드를
+<strong>코봇(판단)</strong> 과 <strong>플로봇(절차)</strong> 으로
+나눈다.</p>
+<table>
+<thead>
+<tr>
+<th>코봇(판단)의 일</th>
+<th>플로봇(절차)의 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>리스크가 큰지 판단</td>
+<td>매주 금요일 정해진 양식으로 상태보고 발송</td>
+</tr>
+<tr>
+<td>이해관계자별 맞춤 보고</td>
+<td>결재선 태우기(승인 라우팅)</td>
+</tr>
+<tr>
+<td>예외 상황 대응</td>
+<td>체크리스트 집행</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2-c. 애매한 카드를 따로 뺀다.</strong> 어느 더미에도 딱 안
+맞는 카드를 빼서 “왜 애매한가”를 적어 둔다(4부에서 둘을 엮을 때 다시
+꺼낸다).</p>
+<p><strong>〔성장〕</strong> 코봇은 <em>판단</em>의 영역을, 플로봇은
+<em>절차</em>의 영역을 각자 갖는다 — 두 주인공이 처음으로 나란히 선다.
+<strong>〔검증 포인트〕</strong> 두 더미를 보고 “이 일은 왜
+코봇/플로봇의 몫인가”를 한 줄로 댈 수 있으면 통과.</p>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="ch02.html">← 2장. 새로 지은 집</a><a class="pg pg-next" href="ch04.html">4장. 지침이 곧 실력 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

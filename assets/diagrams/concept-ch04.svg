@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430">
+<rect x="0" y="0" width="980" height="430" rx="20" fill="#fff" stroke="#E5E7EB" stroke-width="1.5"/>
+<text x="40" y="48" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="22" font-weight="800" fill="#1F2430">4장 — 지침이 곧 실력: 막연함에서 좋은 지침으로</text>
+<rect x="60" y="100" width="360" height="260" rx="16" fill="#F3F4F6" stroke="#C7CBD1" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="80" y="134" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#9AA0A6" text-anchor="start">BEFORE — 막연한 지침</text>
+<rect x="84" y="156" width="312" height="60" rx="12" fill="#fff" stroke="#C7CBD1" stroke-width="2" />
+<text x="100" y="193" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="16" font-weight="600" fill="#5B6472" text-anchor="start">"프로젝트 잘 도와줘"</text>
+<text x="84" y="250" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="500" fill="#9AA0A6" text-anchor="start">→ 무엇을, 어디까지, 모르면?</text>
+<text x="84" y="278" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="500" fill="#9AA0A6" text-anchor="start">→ 코봇이 추측하거나 헤맨다</text>
+<defs><marker id="ah660" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563EB"/></marker></defs><line x1="430" y1="230" x2="505" y2="230" stroke="#2563EB" stroke-width="3" marker-end="url(#ah660)"/>
+<rect x="520" y="100" width="400" height="260" rx="16" fill="#EFF4FF" stroke="#2563EB" stroke-width="2" />
+<text x="540" y="134" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#2563EB" text-anchor="start">AFTER — 좋은 지침 4요소</text>
+<rect x="542" y="158" width="356" height="42" rx="10" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="554" y="185" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="800" fill="#2563EB" text-anchor="start">역할</text>
+<text x="612" y="185" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#1F2430" text-anchor="start">여름 신제품 출시 프로젝트의 PM</text>
+<rect x="542" y="206" width="356" height="42" rx="10" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="554" y="233" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="800" fill="#2563EB" text-anchor="start">범위</text>
+<text x="612" y="233" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#1F2430" text-anchor="start">기획→일정→예산→리스크→보고 / 회계·법무 제외</text>
+<rect x="542" y="254" width="356" height="42" rx="10" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="554" y="281" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="800" fill="#2563EB" text-anchor="start">태도</text>
+<text x="612" y="281" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#1F2430" text-anchor="start">근거를 인용하고 산출물은 정해진 양식으로</text>
+<rect x="542" y="302" width="356" height="42" rx="10" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="554" y="329" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="800" fill="#2563EB" text-anchor="start">원칙</text>
+<text x="612" y="329" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#1F2430" text-anchor="start">모르면 추측 말고 담당자에게 연결</text>
+</svg>

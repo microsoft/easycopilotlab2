@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10장. 지식과 기억 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub active"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="10장-교과서와-기억하는-동료--지식과-기억을-단다">10장. 교과서와
+기억하는 동료 — 지식과 기억을 단다</h1>
+<p>9장에서 코봇은 일하는 법을 배웠다. 기획서를 쓰고 일정표를 짜고,
+예산과 리스크를 거쳐 보고서로 묶는 순서를 손에 넣었다. 그러나 절차를
+안다고 해서 좋은 산출물이 저절로 나오지는 않는다. 회사마다 기획서 양식이
+다르고, 과거 프로젝트에서 쌓인 교훈이 다르며, 같은 “워크숍”이라도
+인사팀이 보는 관점과 마케팅팀이 보는 관점이 다르다. 그 자료를 모른 채
+일반론만 늘어놓는 코봇은 똑똑하지만 우리 회사를 모르는 외부 컨설턴트와
+같다.</p>
+<p>이 장에서는 코봇에게 두 가지를 달아준다. 하나는 참고할
+<strong>지식(Knowledge)</strong>이고, 다른 하나는 나를 <strong>기억(Memory)</strong>하는 능력이다.
+새 에이전트 경험에서 둘은 모두 Build 탭의 Knowledge 구성요소 안에서
+만난다. 여기에 Microsoft 365와 조직 데이터의 맥락을 가져오는
+<strong>Microsoft IQ/Work IQ</strong>도 함께 놓인다. 하지만 한 화면에
+모여 있다고 해서 같은 능력은 아니다. 지식은 코봇이 읽는 교과서이고,
+기억은 코봇이 나에 대해 간직하는 메모다. 이 둘을 헷갈리지 않는 것이
+10장의 핵심이다.</p>
+<blockquote>
+<p><strong>2026년 기준 주의</strong><br />
+이 장은 Microsoft Learn의 새 에이전트 경험 문서와 Knowledge 관련 문서를
+기준으로 쓴다. Knowledge, Work IQ, Memory는 미리보기와 초기 출시가 섞여
+빠르게 변하는 영역이다. 화면 이름과 한도는 2026년 6월 기준으로 이해하고,
+운영 전에 현재 테넌트의 UI와 관리자 정책을 확인한다.</p>
+</blockquote>
+<h2 id="9-1-지식--코봇의-교과서이자-사내망">〈9-1〉 지식 — 코봇의
+교과서이자 사내망</h2>
+<p><strong>Knowledge는 읽기 전용 참고 자료다.</strong> 코봇은 지식으로
+연결된 문서와 데이터를 찾아 답의 근거로 삼는다. 도서관에서 책을 펴 읽고
+인용하되, 책장을 찢거나 새 문장을 써넣지는 않는 것과 같다. 그래서 회사의
+표준 기획서 템플릿, 과거 프로젝트 회고, 예산 가이드, 워크숍 운영
+체크리스트를 지식으로 연결하면 코봇의 산출물이 비로소 “우리 회사답게”
+바뀐다.</p>
+<p>여기서 “읽기 전용”이라는 말은 아주 중요하다. SharePoint 문서를
+Knowledge로 연결했다고 해서 코봇이 그 문서를 수정하는 것은 아니다.
+Dataverse 테이블을 지식으로 연결했다고 해서 레코드를 새로 만들거나
+갱신하는 것도 아니다. 그런 행동은 11장의 <strong>도구(Tool)</strong>가 맡는다.
+Knowledge는 근거를 찾고, Tool은 행동한다. 이 경계를 일찍 잡아두면 설계가
+깨끗해진다.</p>
+<p>신버전 Copilot Studio의 Build 탭은 에이전트의 핵심 능력을 한 표면에
+모은다. Instructions는 정체성, Skills는 일하는 법, Knowledge는 읽을
+자료, Tools는 행동, Connected agents는 전문가 위임이다. 지식을 붙이는
+흐름은 대체로 다음과 같다.</p>
+<ol type="1">
+<li>Copilot Studio에서 새 경험으로 만든 코봇을 연다.</li>
+<li><strong>Build</strong> 탭에서 <strong>Knowledge</strong> 구성요소를
+찾는다.</li>
+<li><strong>Add knowledge</strong>를 선택한다.</li>
+<li>자료 성격에 맞는 소스를 고른다.</li>
+<li>이름과 설명을 쓴다. 설명은 코봇이 “언제 이 소스를 찾아야 하는지”
+판단하는 신호다.</li>
+<li><strong>Add to agent</strong>로 추가한 뒤, 상태가 준비될 때까지
+기다린다.</li>
+<li><strong>Preview</strong>에서 실제 질문을 던지고, 답변이 어떤 소스와
+인용을 사용했는지 확인한다.</li>
+</ol>
+<p>설명은 Skill에서만 중요한 것이 아니다. Knowledge에도 설명이 필요하다.
+“워크숍 자료”보다 “사내 워크숍 기획서 템플릿, 예산 항목, 장소 예약
+체크리스트를 포함한 운영 표준”이 훨씬 낫다. 코봇은 설명을 보고 어떤
+자료를 찾아야 할지 고른다. 관련 없는 지식이 많아질수록 설명의 품질이
+답변 품질을 좌우한다.</p>
+<blockquote>
+<p><img src="assets/cobot-say-webtoon.png" alt="코봇" /> <strong>코봇
+한마디</strong></p>
+<p>"저는 교과서를 읽어 근거를 찾지만, 책장을 고치지는 않아요. 회사
+문서를 참고하게 하고 실제 수정이나 등록은 도구에게 맡기면 설계가
+깔끔해집니다!"</p>
+</blockquote>
+<h2 id="어떤-교과서를-줄-것인가">어떤 교과서를 줄 것인가</h2>
+<p>코봇에게 연결할 수 있는 지식 소스는 자료의 위치와 성격에 따라
+달라진다. 모든 목록을 외울 필요는 없다. “이 자료는 어디에 있고, 누가 볼
+수 있으며, 얼마나 구조화되어 있는가”만 묻자.</p>
+<table>
+<thead>
+<tr>
+<th>소스</th>
+<th>어울리는 자료</th>
+<th>2026년 기준 확인한 특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Public website</strong></td>
+<td>공개 제품 문서, 공개 규정, 외부 행사 안내</td>
+<td>Bing 기반 그라운딩을 사용한다. URL은 공개되어 있고 Bing에 색인되어야
+하며, URL 경로 깊이 제한이 있다. 생성형 모드에서는 공개 웹사이트 입력을
+최대 25개까지 다룬다.</td>
+</tr>
+<tr>
+<td><strong>Uploaded documents</strong></td>
+<td>PDF, Word, Excel, PowerPoint, Markdown, CSV 등 파일</td>
+<td>Dataverse에 안전하게 저장된다. 파일 하나는 512MB를 넘을 수 없고,
+에이전트는 최대 500개 파일을 Knowledge로 포함할 수 있다. 암호화·암호
+보호 파일, 이미지·동영상·실행 파일·오디오는 지식 문서로 쓰지
+않는다.</td>
+</tr>
+<tr>
+<td><strong>SharePoint</strong></td>
+<td>팀 문서, 템플릿, 회의록, 정책 문서</td>
+<td>사용자의 Microsoft Entra ID 권한으로 접근한다. 생성형 모드에서는
+SharePoint URL 최대 25개를 소스로 다룬다. SharePoint 목록은 한 번에 최대
+15개까지 선택해 추가할 수 있다.</td>
+</tr>
+<tr>
+<td><strong>Dataverse</strong></td>
+<td>프로젝트 대장, 고객 레코드, 승인 상태 같은 구조화 데이터</td>
+<td>Dataverse search가 필요하다. 에이전트 인증은 <strong>Authenticate
+with Microsoft</strong>여야 한다. Dataverse 테이블 지식 소스 하나에 최대
+15개 테이블을 추가할 수 있다. 동의어와 용어집을 보강하면 답 품질이
+좋아진다.</td>
+</tr>
+<tr>
+<td><strong>Azure AI Search</strong></td>
+<td>대량 문서 컬렉션, 벡터 검색, 자체 검색 인덱스</td>
+<td>Azure AI Search 연결을 공식 데이터 연결로 만든다. 하나의 연결에서
+사용할 벡터 인덱스는 하나를 지정한다. 통합 벡터화와 semantic ranker를
+미리 구성할 수 있다.</td>
+</tr>
+<tr>
+<td><strong>Enterprise data connectors</strong></td>
+<td>ServiceNow, Confluence 등 Microsoft Search로 색인된 업무 시스템</td>
+<td>사용자의 권한을 따른다. 이미 조직 검색 체계에 들어온 업무 데이터를
+코봇의 근거로 확장할 때 쓴다.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>함정</strong><br />
+Public website에 사내 SharePoint 주소를 넣으면 안 된다. 공개 웹사이트
+지식은 공개되어 있고 Bing에 색인된 콘텐츠를 전제로 한다. SharePoint,
+Teams Wiki, 사내 포털처럼 로그인해야 하는 자료는 SharePoint나 Enterprise
+data 쪽으로 연결해야 한다.</p>
+</blockquote>
+<p>우리 예제의 코봇에게는 세 가지 지식이 특히 유용하다. 첫째,
+SharePoint의 <code>프로젝트-운영-표준</code> 폴더다. 여기에는 기획서
+템플릿, 일정표 양식, 상태보고서 예시가 들어 있다. 둘째, Dataverse의
+<code>Project Register</code> 테이블이다. 프로젝트명, 예산 한도, 승인
+상태, 담당 부서 같은 구조화 정보가 있다. 셋째, 공개 행사장 이용 규정
+웹페이지다. 본사 강당 사용 시간, 외부 방문자 안내 같은 공개 규정은
+Public website로도 충분하다.</p>
+<p>이렇게 붙이면 9장에서 만든 Skill이 더 잘 작동한다.
+<code>project-planner</code>는 회사 기획서 템플릿을 보고 항목을 맞춘다.
+<code>budget-resource</code>는 과거 프로젝트 예산 항목을 참고해 원화
+추정을 현실적으로 잡는다. <code>reporter</code>는 상태보고서 예시를 보고
+경영진이 익숙한 형식으로 요약한다. Skill이 “일하는 법”이라면 Knowledge는
+“우리 회사에서는 그 일을 어떤 자료를 보고 하는가”다.</p>
+<blockquote>
+<p><strong>더 보기</strong> — 연결할 수 있는 지식 소스의 전체 목록과
+상황별 선택 기준은 부록 E의 <strong>E4·E5</strong>에 정리돼 있다. 입력
+한도·미리보기 상태처럼 자주 바뀌는 값은 <strong>컴패니언
+사이트</strong>의 「연결할 수 있는 지식 소스」에서 갱신한다.</p>
+</blockquote>
+<h2 id="실제로-지식-하나를-붙여-보자">실제로 지식 하나를 붙여 보자</h2>
+<p>사내 워크숍 프로젝트를 예로 들어 SharePoint 지식을 붙이는 장면을 그려
+보자.</p>
+<ol type="1">
+<li>코봇의 <strong>Build</strong> 탭에서 <strong>Knowledge</strong>를
+연다.</li>
+<li><strong>Add knowledge</strong>를 누르고
+<strong>SharePoint</strong>를 선택한다.</li>
+<li><code>https://contoso.sharepoint.com/sites/project-office/workshop-templates</code>
+같은 사이트나 폴더 URL을 입력한다.</li>
+<li>이름은 <code>workshop-project-standards</code>처럼 좁게 쓴다.</li>
+<li>설명에는 “사내 워크숍 프로젝트의 기획서 템플릿, 예산 항목, 장소 예약
+체크리스트, 상태보고서 예시를 포함한다. 사용자가 워크숍
+기획·일정·예산·보고 형식을 요청할 때 참고한다.”라고 적는다.</li>
+<li><strong>Add to agent</strong>를 선택한다.</li>
+<li>Preview에서 “80명 규모 사내 워크숍 기획서 초안을 회사 양식으로
+만들어줘”라고 묻는다.</li>
+<li>답변이 템플릿 항목을 반영하는지, 인용이나 근거가 올바른지
+확인한다.</li>
+</ol>
+<p>지식 추가에서 자주 놓치는 것은 <strong>설명</strong>과 <strong>테스트
+질문</strong>이다. 설명이 흐리면 코봇이 이 소스를 언제 써야 하는지
+모른다. 테스트 질문이 너무 일반적이면 지식 연결이 잘됐는지 확인하기
+어렵다. “워크숍 알려줘”보다 “회사 표준 기획서 양식으로 사내 워크숍
+기획서를 만들어줘”가 훨씬 좋은 테스트다.</p>
+<blockquote>
+<p><strong>팁</strong><br />
+지식 소스 이름은 사람이 관리하기 쉬운 이름이어야 한다.
+<code>sharepoint1</code>, <code>file-final-final</code> 같은 이름은 한
+달 뒤 자신에게 벌을 준다. <code>workshop-template-sharepoint</code>,
+<code>project-register-dataverse</code>,
+<code>public-venue-policy</code>처럼 위치와 용도를 함께 드러내자.</p>
+</blockquote>
+<h2 id="보안-트리밍--같은-질문-다른-답">보안 트리밍 — 같은 질문, 다른
+답</h2>
+<p>내부 지식을 붙일 때 가장 먼저 떠오르는 걱정은 보안이다. “코봇이 권한
+없는 문서까지 보여주면 어떡하지?” Microsoft Learn의 Knowledge 요약
+문서는 이 원칙을 분명히 한다. 에이전트 사용자가 질문할 때, 지식 소스는
+그 사용자가 실제로 접근할 수 있는 콘텐츠만 표면화한다. 이를 <strong>사용자
+단위 보안 트리밍(내가 못 보는 자료는 코봇도 못 봄)</strong>이라고 부른다.</p>
+<p>예를 들어 같은 코봇에게 두 사람이 묻는다.</p>
+<blockquote>
+<p>“지난 워크숍 예산을 참고해서 이번 워크숍 예산안을 만들어줘.”</p>
+</blockquote>
+<p>PMO 팀원은 SharePoint의 과거 예산 파일과 Dataverse의 프로젝트 대장을
+볼 권한이 있으므로, 코봇은 그 범위 안에서 답한다. 일반 참가자는 같은
+파일을 볼 수 없으므로, 코봇은 공개된 템플릿이나 자신이 접근 가능한
+자료만 근거로 삼는다. 같은 코봇, 같은 질문이어도 답의 근거 범위가
+달라지는 것이다.</p>
+<p>이 원칙은 편리하지만 만능은 아니다. 원본 권한 설계가 지저분하면
+코봇의 답도 지저분해진다. “모두에게 열려 있는 폴더”에 민감한 예산 파일이
+들어 있으면, 코봇은 그 권한을 그대로 따른다. AI 보안은 AI 화면에서만
+해결되지 않는다. SharePoint, Dataverse, Entra ID, Purview의 기본 권한
+정리가 먼저다. 이 이야기는 21장 거버넌스에서 다시 다룬다.</p>
+<!-- GATE:file-native 공개확인후해제 -->
+
+<p>한 가지 더, ‘읽는 것’과 ‘다루는 것’은 다르다. 지금까지의 Knowledge는
+문서에서 <strong>필요한 대목을 찾아 인용하는</strong> 검색에 가깝다.
+그런데 코봇이 파일 자체를 더 깊이 <strong>다루는</strong> 힘도 자라고
+있다. 수백 행짜리 예산 엑셀을 통째로 받아 합계와 이상치를 계산하고, 긴
+계약서를 끝까지 훑어 조항을 비교하고, 표를 직접 집계해 답을 만드는
+식이다. 회의록 검색이 “해당 문장을 찾아 인용”이라면, 이 능력은 “파일을
+작업대에 올려놓고 직접 계산·정리”에 가깝다. 큰 파일과 표·수치가 많은
+업무라면, 단순 지식 인용을 넘어 코봇이 파일을 직접 다루게 하는 길이 점점
+넓어진다. 다만 무엇을 ‘읽기(Knowledge)’로, 무엇을 ‘다루기(작업)’로
+맡길지는 여전히 설계자가 나눈다.</p>
+<!-- /GATE:file-native -->
+
+<h2 id="microsoft-iq와-work-iq--사내-분위기까지-읽는-층">Microsoft IQ와
+Work IQ — 사내 분위기까지 읽는 층</h2>
+<p>Knowledge가 특정 소스를 연결하는 일이라면, <strong>Microsoft IQ/Work
+IQ</strong>는 더 넓은 조직 맥락을 제공하는 지능 층이다. Microsoft
+Learn의 Work IQ 설명은 이를 Microsoft 365, Dynamics 365, Power Apps,
+연결된 업무 시스템의 데이터와 맥락, 도구를 이해하는 workplace
+intelligence layer로 설명한다. 파일, 메일, 회의, 채팅, 업무 시스템의
+신호를 바탕으로 “일이 어떻게 흘러가는지”에 대한 의미적 이해를 만든다는
+뜻이다.</p>
+<p>입문서식으로 말하면 이렇다. SharePoint Knowledge가 “프로젝트 운영
+매뉴얼 책장”이라면, Work IQ는 “회사에서 실제로 누가 누구와 어떤 일을
+어떻게 진행하는지 아는 베테랑 비서”에 가깝다. 회의에서 논의된 배경,
+메일에서 오간 결정, Teams 채팅의 후속 조치 같은 맥락이 답의 품질을
+끌어올린다.</p>
+<p>2026년 기준 Copilot Studio에서는 Work IQ MCP가 미리보기로 제공된다.
+Work IQ Mail, Calendar, Teams 같은 MCP 서버를 Tool로 추가해
+메일·일정·Teams 맥락을 사용할 수 있다. 이때도 중요한 것은 권한과
+거버넌스다. Work IQ MCP는 Microsoft 365 Copilot 라이선스와 관리자 동의,
+Agent 365 관리 체계의 영향을 받는다. 그러므로 이 장에서는 개념을 잡고,
+실제 행동 도구로 붙이는 흐름은 11장의 MCP 설명과 21장의 거버넌스로
+넘긴다.</p>
+<blockquote>
+<p><strong>쉬운 풀이 — MCP (Model Context Protocol)</strong><br />
+여러 도구와 자료를 ‘도구 상자째’ 코봇에 연결하는 표준 방식.</p>
+</blockquote>
+<blockquote>
+<p><strong>현장에서</strong><br />
+“Knowledge만 붙였는데 왜 회의 맥락까지 알아서 요약하지 않죠?”라는 질문이
+자주 나온다. 특정 SharePoint 폴더를 연결하는 것과 Work IQ가 Microsoft
+365 전반의 업무 맥락을 활용하는 것은 다른 층이다. 자료 폴더를 읽게 할
+것인지, 조직의 업무 신호까지 활용하게 할 것인지 의도적으로 구분하자.</p>
+</blockquote>
+<blockquote>
+<p><img src="assets/cobot-say-webtoon.png" alt="코봇" /> <strong>코봇
+한마디</strong></p>
+<p>"SharePoint 책장은 자료를 알려 주고, Work IQ는 회사 일이 흐르는
+맥락을 비춰 줘요. 둘을 구분해 주시면 저는 더 우리 회사다운 답을 할 수
+있습니다!"</p>
+</blockquote>
+<h2 id="9-2-기억--나를-기억하는-동료">〈9-2〉 기억 — 나를 기억하는
+동료</h2>
+<p>지식이 바깥의 자료를 읽는 능력이라면, <strong>Memory는 나와의
+상호작용에서 생긴 지속 맥락</strong>이다. “나는 이 프로젝트의 PM이다”,
+“우리 팀은 금요일 오전에 주간 보고를 선호한다”, “예산은 원화 표로 보고
+싶다” 같은 사실을 코봇이 다음 대화에서도 활용하는 능력이다. 매번
+처음부터 자기소개를 하지 않아도 되는 동료를 떠올리면 된다.</p>
+<p>Preview 데모에서 흔히 보이는 장면은 단순하다. 사용자가 말한다.</p>
+<blockquote>
+<p>“코봇, 기억해줘. 나는 이번 사내 워크숍의 PM이고, 보고서는 금요일
+오전에 받고 싶어.”</p>
+</blockquote>
+<p>새 대화를 열고 다시 묻는다.</p>
+<blockquote>
+<p>“내가 맡은 프로젝트에서 다음 보고는 언제가 좋아?”</p>
+</blockquote>
+<p>Memory가 작동하면 코봇은 “사용자는 사내 워크숍 PM이며 금요일 오전
+보고를 선호한다”는 맥락을 참고한다. 이것은 SharePoint 문서를 검색한
+결과가 아니다. 사용자와의 상호작용에서 저장된 개인화 맥락이다.</p>
+<p>Memory는 편리하지만 민감하다. Microsoft 365 Copilot의 Memory 문서는
+개인화와 기억이 미리보기이며, 저장된 기억과 채팅 기록에서 추론된 세부
+정보, 사용자 지정 지침이 사용자 메일박스의 숨김 폴더에 저장된다고
+설명한다. 사용자는 개인화 설정에서 저장된 기억을 관리·삭제할 수 있고,
+관리자는 테넌트 수준에서 개인화 제어를 다룰 수 있다. Copilot Studio의
+에이전트 Memory도 “켜면 편리하니 무조건 켠다”가 아니라, 어떤 맥락을
+기억하게 할지 사용자와 조직이 이해한 상태에서 다뤄야 한다.</p>
+<blockquote>
+<p><strong>함정</strong><br />
+Memory에 회사 정책 문서를 “넣어두자”고 생각하면 설계가 틀어진다. 정책
+문서는 Knowledge다. Memory는 사용자 선호와 반복 맥락을 저장하는 곳이다.
+반대로 “나는 PM이다” 같은 개인 맥락을 SharePoint 문서로 만들 필요도
+없다.</p>
+</blockquote>
+<h2 id="지식과-기억을-헷갈리지-않기">지식과 기억을 헷갈리지 않기</h2>
+<p>이 둘은 자주 뒤섞인다. “왜 내 SharePoint 문서를 기억하지 못하지?”라는
+불평도, “왜 코봇이 내가 PM이라는 걸 문서에서 찾아야 하지?”라는 혼란도
+여기서 나온다. 회사 문서를 근거로 답하는 것은 Knowledge의 몫이고,
+사용자에 대한 반복 맥락을 간직하는 것은 Memory의 몫이다. Knowledge는
+너를 기억하지 않고, Memory는 회사 문서를 대신하지 않는다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Knowledge(지식)</th>
+<th>Memory(기억)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>비유</td>
+<td>교과서, 사내망, 문서 보관소</td>
+<td>나를 기억하는 동료의 메모</td>
+</tr>
+<tr>
+<td>대상</td>
+<td>회사·웹·업무 시스템의 자료</td>
+<td>사용자 선호, 역할, 반복 대화 맥락</td>
+</tr>
+<tr>
+<td>성격</td>
+<td>읽기 전용 근거</td>
+<td>개인화된 지속 맥락</td>
+</tr>
+<tr>
+<td>보안</td>
+<td>원본 권한과 사용자 단위 보안 트리밍</td>
+<td>개인화·프라이버시 설정과 관리자 제어</td>
+</tr>
+<tr>
+<td>예</td>
+<td>기획서 템플릿, 과거 회고, Dataverse 프로젝트 대장</td>
+<td>“나는 PM”, “금요일 보고 선호”, “원화 표기 선호”</td>
+</tr>
+<tr>
+<td>다음 장 연결</td>
+<td>자료를 수정하려면 Tool이 필요</td>
+<td>기억을 바탕으로 Tool을 더 적절히 실행할 수 있음</td>
+</tr>
+</tbody>
+</table>
+<p>코봇의 프로젝트 운영으로 다시 연결해 보자. SharePoint 지식은 코봇에게
+회사 기획서 양식을 알려준다. Dataverse 지식은 프로젝트 대장과 승인
+상태를 알려준다. Work IQ는 회의·메일·업무 신호를 통해 현재 프로젝트의
+살아 있는 맥락을 더 잘 이해하게 한다. Memory는 “사용자는 이 프로젝트의
+PM이고, 보고는 금요일 오전을 선호한다”는 개인 맥락을 이어준다. 네 능력이
+섞일 때 코봇은 비로소 “우리 회사에서 나와 함께 일하는 동료”가 된다.</p>
+<h2 id="좋은-지식-설계의-작은-원칙">좋은 지식 설계의 작은 원칙</h2>
+<p>지식을 많이 붙인다고 코봇이 무조건 똑똑해지지는 않는다. 관련 없는
+책이 가득한 책장은 신입을 도와주기보다 방해한다. Knowledge 설계의 기본
+원칙은 좁게, 선명하게, 검증 가능하게다.</p>
+<table>
+<thead>
+<tr>
+<th>원칙</th>
+<th>나쁜 예</th>
+<th>좋은 예</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>좁게 붙인다</td>
+<td>회사 전체 SharePoint 루트를 통째로 연결</td>
+<td>프로젝트 운영 표준 폴더, 워크숍 템플릿 폴더만 연결</td>
+</tr>
+<tr>
+<td>설명을 쓴다</td>
+<td>“문서 모음”</td>
+<td>“사내 워크숍 기획·예산·보고 템플릿. 워크숍 프로젝트 산출물 작성 시
+사용”</td>
+</tr>
+<tr>
+<td>권한을 먼저 정리한다</td>
+<td>민감 자료가 모두 열람 폴더에 섞임</td>
+<td>PMO, 재무, 일반 사용자 권한을 폴더·테이블 단위로 분리</td>
+</tr>
+<tr>
+<td>Preview로 확인한다</td>
+<td>“잘 되겠지” 하고 게시</td>
+<td>대표 질문 5개로 어떤 소스가 쓰였는지 확인</td>
+</tr>
+<tr>
+<td>행동과 분리한다</td>
+<td>“이 문서를 읽고 수정해”를 Knowledge에 기대</td>
+<td>읽기는 Knowledge, 수정·업로드는 Tool로 설계</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>작은 사례</strong><br />
+한 교육팀은 “교육 자료”라는 SharePoint 사이트 전체를 코봇에게 연결했다.
+코봇은 워크숍 기획서 질문에 신규입사자 교육 자료와 보안 교육 자료를 섞어
+답했다. 지식 소스를 <code>workshop-templates</code>,
+<code>venue-rules</code>, <code>budget-guidelines</code> 세 개로 쪼개고
+설명을 구체화하자 답변이 안정됐다. 바뀐 것은 모델이 아니라 책장
+정리였다.</p>
+</blockquote>
+<blockquote>
+<p><img src="assets/cobot-say-webtoon.png" alt="코봇" /> <strong>코봇
+한마디</strong></p>
+<p>"지식은 회사의 교과서, 기억은 사용자에 대한 제 메모예요. 두 가지가
+만날 때 저는 처음 보는 상담원이 아니라 함께 일해 온 동료처럼
+움직입니다!"</p>
+</blockquote>
+<h2 id="핵심-정리">핵심 정리</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>요점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Knowledge는 읽기 전용 근거다. 문서와 데이터를 찾아 답하지만 원본을
+수정하지 않는다.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>새 경험에서 Knowledge 구성요소 안에는 데이터 소스, Microsoft IQ/Work
+IQ, Memory가 함께 놓이지만 역할은 다르다.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Public website, Uploaded documents, SharePoint, Dataverse, Azure AI
+Search, Enterprise data는 자료의 위치와 성격에 맞춰 고른다.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>내부 지식은 사용자 단위 보안 트리밍을 따른다. 코봇은 사용자가 볼
+권한이 있는 내용만 근거로 삼는다.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Work IQ는 Microsoft 365와 업무 시스템의 맥락을 이해하는 지능 층이며,
+2026년 기준 MCP 형태의 미리보기 기능도 제공된다.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Memory는 사용자와 대화에 대한 지속 맥락이다. Knowledge가 회사 문서를
+대신하고, Memory가 회사 문서를 대신하지 않는다.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>좋은 지식 설계는 많은 소스보다 좁은 범위, 좋은 설명, 권한 정리,
+Preview 검증에서 나온다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="자주-묻는-질문faq">자주 묻는 질문(FAQ)</h2>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>답변</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>지식을 많이 연결할수록 똑똑해지나?</td>
+<td>아니다. 관련 없는 자료는 노이즈가 된다. 먼저 업무 단위로 좁게
+붙이고, 설명을 정확히 쓰고, Preview에서 확인한다.</td>
+</tr>
+<tr>
+<td>코봇이 비밀 문서를 보여줄 수 있나?</td>
+<td>원칙적으로 Knowledge는 사용자 단위 보안 트리밍을 따른다. 다만 원본
+권한이 잘못 열려 있으면 그 권한이 그대로 반영되므로 권한 정리가
+먼저다.</td>
+</tr>
+<tr>
+<td>Knowledge와 Memory의 가장 쉬운 구분은?</td>
+<td>“회사 자료인가, 나에 대한 맥락인가”로 묻는다. 회사 자료는 Knowledge,
+나의 역할·선호·반복 맥락은 Memory다.</td>
+</tr>
+<tr>
+<td>업로드 파일 한도는?</td>
+<td>Microsoft Learn 기준 파일 하나는 512MB를 넘을 수 없고, 에이전트는
+최대 500개 파일을 Knowledge로 포함할 수 있다. 지원 파일 형식과 제한은
+현재 문서를 확인한다.</td>
+</tr>
+<tr>
+<td>Public website에 사내 사이트를 넣어도 되나?</td>
+<td>로그인해야 하는 사내 사이트는 적합하지 않다. Public website는
+공개되고 Bing에 색인된 웹 콘텐츠를 전제로 한다. 사내 문서는 SharePoint나
+Enterprise data로 연결한다.</td>
+</tr>
+<tr>
+<td>지식으로 읽은 문서를 고치게 할 수 있나?</td>
+<td>Knowledge만으로는 못 한다. 문서 생성·수정·업로드·발송은 11장의 Tool
+또는 4부의 Workflows로 설계한다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="다음-장에서는">다음 장에서는</h2>
+<p>지식과 기억으로 코봇은 우리 회사를 아는 동료가 되었다. 그러나 아직은
+읽고 생각하고 말하는 능력에 가깝다. 기획서를 회사 양식으로 완성해도, 그
+파일을 SharePoint에 올리고 담당자에게 알림을 보내고 Dataverse 상태를
+바꾸는 일은 또 다른 능력이다. 11장에서는 코봇에게 <strong>도구</strong>,
+곧 손발을 달아 생각한 것을 실제 행동으로 옮기게 만든다.</p>
+<h2 id="실습--코봇-키우기-10단계-지식과-기억을-단다">실습 — 코봇 키우기
+10단계: 지식과 기억을 단다</h2>
+<p><img src="assets/diagrams/board-ch10.png"
+alt="10장까지의 코봇·플로봇 성장" /></p>
+<p><strong>〔이어받기〕</strong> 9장의 스킬 5종을 갖췄지만, 코봇은 아직
+‘아무 말’로 답할 수 있다. 근거와 맥락을 붙인다.</p>
+<p><strong>9-a. Knowledge를 연결한다.</strong> SharePoint의 ‘프로젝트
+표준 템플릿’·‘과거 출시 프로젝트 아카이브’를 지식 소스로 연결 → 기획서가
+<em>근거를 인용해</em> 작성되게 한다(아무 말 → 회사 자료 기반).</p>
+<p><strong>9-b. Memory를 켠다.</strong> “나는 이 프로젝트 PM이고 금요일
+보고를 선호한다”를 한 번 말해 기억시키고, 다음 대화에서 <em>다시 묻지
+않는지</em> 확인한다.</p>
+<p><strong>9-c. 경계를 콕 집는다.</strong> “왜 내 SharePoint 문서를 기억
+못 해?”는 Knowledge(회사 자료 인용)와 Memory(너에 대한 사실 기억)를 섞은
+오해다.</p>
+<p><strong>〔성장〕</strong> 코봇은 <strong>회사 자료에
+근거</strong>하고 <strong>사용자를 기억</strong>한다 — ‘아무 말 하는
+신입’에서 ‘맥락 아는 동료’로. <strong>〔검증 포인트〕</strong> 기획서가
+표준 템플릿 형식을 따르고, 두 번째 대화에서 PM 신분을 다시 묻지 않으면
+통과.</p>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="ch09.html">← 9장. 한 사람이 한 팀처럼</a><a class="pg pg-next" href="ch11.html">11장. 손발을 달다 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

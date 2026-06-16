@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3부. 가르친다 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part active open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro active"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="3부-가르친다--코봇에게-능력을-단다">3부. 가르친다 — 코봇에게
+능력을 단다</h1>
+<p><img src="webtoon/ch03-teaching-v1.png"
+alt="학습만화 3부 — 능력을 단다" /></p>
+<blockquote>
+<p><em>학습만화로 먼저 만나기 —
+모자(Skill)·교과서(지식)·기억(Memory)·손발(도구)을 달아준다.</em></p>
+</blockquote>
+<p>2부에서 우리는 코봇에게 '누구인가'를 가르쳤다. 어떤 환경에서 태어나,
+어떤 지침을 따르며, 어떤 태도로 말하는지를 정해주었다. 그렇게 정체성을
+갖춘 코봇은 제법 그럴듯한 동료처럼 보인다. 그러나 정체성만으로는 일이
+끝나지 않는다. 사람으로 치면 인사기록카드와 직무 소개서까지는 갖췄으나,
+손에 쥔 도구도 책상 위 자료도 아직 없는 첫 출근날의 신입과 같다.</p>
+<p>이제부터 다룰 것은 화면 오른쪽의 <strong>능력 트레이</strong>다. 코봇
+작성 화면을 열면 왼쪽에서 지침으로 정체성을 빚고, 오른쪽에서 능력을
+하나씩 단다. 능력은 세 갈래다. 일하는 법을 가르치는
+<strong>Skill(전문성)</strong>, 참고할 자료를 쥐여주는 <strong>지식과
+기억</strong>, 그리고 실제로 시스템을 움직이는 <strong>도구(손발)</strong>다. 이 세
+가지가 정체성 위에 얹히는 순간, 말만 잘하던 챗봇은 일을 끝내는 직원으로
+바뀐다.</p>
+<h2 id="네-능력의-경계">네 능력의 경계</h2>
+<p>세 능력의 차이는 한 장면으로 또렷해진다. 사용자가 코봇에게 이렇게
+말했다고 하자. "프로젝트 일정표를 만들어서 SharePoint에 올려줘." 한
+문장이지만, 코봇이 이를 해내려면 서로 다른 능력 네 가지가 차례로
+움직인다.</p>
+<p>먼저 일정표의 '내용'을 짜는 일이 있다. 어떤 단계를 어떤 순서로
+배치하고 기간을 어떻게 나눌지를 아는 전문성, 이것이
+<strong>Skill</strong>이다. 일정설계자 Skill이 일정표 초안을 머릿속에서
+만들어낸다. 그다음 코봇은 빈손으로 짓지 않는다. 회사의 표준 일정
+템플릿과 지난 프로젝트 문서를 참고해 근거 위에서 작성하는데, 이렇게 읽어
+인용하는 읽기 전용 자료가 <strong>Knowledge</strong>다. 초안이 완성되면
+이제 행동할 차례다. 그 내용을 실제 .docx 파일로 만들어 SharePoint에
+업로드하는 일, 곧 시스템을 직접 움직이는 손발이
+<strong>Tool</strong>이다. 마지막으로 코봇은 "이 사용자는 금요일 보고를
+선호한다"는 사실을 기억해 다음에는 묻지 않는데, 나에 대한 지속적인
+맥락을 간직하는 것이 <strong>Memory</strong>다.</p>
+<p>한 문장으로 줄이면 이렇다. <strong>Skill은 만드는 법, Knowledge는
+참고 자료, Tool은 행동, Memory는 너를 기억하는 능력이다.</strong> 3부는
+이 네 능력을 차례로 단다(9~11장). 그리고 능력을 다는 마지막 걸음으로,
+혼자 다 짊어지던 코봇이 후배 전문가를 들여 팀을 이끌게 한다(12장
+슈퍼호스트). 다만 종류와 한도가 제품 진화로 계속 늘어나는 부분 — 지식
+소스의 전체 목록, 도구의 전체 종류, 부서별 스킬 갤러리 — 은 본문에
+요지와 대표 예시만 두고, 망라형 목록은 <strong>부록 E "능력 카탈로그"</strong>로
+넘긴다. 본문이 카탈로그에 잠식되지 않게 하기 위함이다.</p>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="ch08.html">← 8장. 지침 쓰기</a><a class="pg pg-next" href="ch09.html">9장. 한 사람이 한 팀처럼 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

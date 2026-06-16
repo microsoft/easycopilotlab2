@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5부. 다듬는다 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part active open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro active"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="5부-다듬는다--테스트하고-평가한다">5부. 다듬는다 — 테스트하고
+평가한다</h1>
+<p><img src="webtoon/ch05-refine-v1.png"
+alt="학습만화 5부 — 다듬는다" /></p>
+<blockquote>
+<p><em>학습만화로 먼저 만나기 — 미리보기·추론·테스트·평가로 내보내기
+전에 다듬는다.</em></p>
+</blockquote>
+<p>2·3·4부를 지나며 우리는 코봇에게 정체성과 전문성, 자료와 손발을
+차례로 붙이고, 절차를 맡을 플로봇 파트너까지 엮었다. 지침으로 누구인지를
+정해주었고, Skill로 일하는 법을 가르쳤으며, 지식으로 교과서를 쥐여주고,
+도구로 실제 행동까지 맡겼다. 코봇은 이제 제법 그럴듯한 동료의 꼴을
+갖추었다. 그러나 "붙였다"가 곧 "잘 된다"는 아니다. 만든 사람의
+머릿속에서만 멀쩡할 뿐, 실제로 의도대로 도는지는 아직 아무도 모른다.</p>
+<p>5부는 만든 것을 다듬는 단계다. 다듬는 일은 세 겹으로 이루어진다. 먼저
+손으로 <strong>확인한다(Preview)</strong>. 작성 화면 옆에서 직접 말을
+걸어 의도대로 도는지 본다. 다음으로 <strong>들여다본다(추론
+관찰)</strong>. 코봇이 왜 그렇게 답했는지 그 사고 과정을 펼쳐 읽는다.
+마지막으로 <strong>숫자로 검증한다(Evaluate)</strong>. 질문과 기대답변을
+모은 세트로 일괄 시험해 품질을 점수로 본다.</p>
+<p>세 가지는 중복이 아니라 <strong>순서이자 깊이의 사다리</strong>다.
+한눈에 정리하면 이렇다.</p>
+<table>
+<thead>
+<tr>
+<th>단계</th>
+<th>목적</th>
+<th>언제 쓰나</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preview (16장)</td>
+<td>손으로 확인하기</td>
+<td>“이게 맞나?” 감을 잡을 때</td>
+<td>정성 평가: 그럴듯하다 / 이상하다</td>
+</tr>
+<tr>
+<td>추론 관찰 (17장)</td>
+<td>왜 그렇게 했는지 읽기</td>
+<td>“왜 이 답을 했지?” 의문이 들 때</td>
+<td>진단: “아, 지침을 잘못 이해했구나”</td>
+</tr>
+<tr>
+<td>Evaluate (18장)</td>
+<td>품질을 점수로</td>
+<td>“배포해도 될까?” 최종 확인</td>
+<td>정량 평가: 기준 점수를 넘었는가</td>
+</tr>
+</tbody>
+</table>
+<p>처음에는 Preview만으로 충분하다. 같은 실수가 반복되면 추론을
+들여다보고, 안정화 단계에 이르면 Evaluate로 품질을 숫자로 본다. 손의
+감각에서 출발해 머릿속을 거쳐 숫자에 닿는 학습 곡선이다.</p>
+<p>솔직히 말하면, 이 단계는 제품을 만드는 라이프사이클에서 가장 자주
+건너뛰는 대목이다. 데모가 한 번 잘 돌면 다 된 것 같고, 빨리 내보내고
+싶은 마음이 앞선다. 그러나 우리가 만드는 것은 한 번 보여주고 마는
+장난감이 아니라, 회사가 실제로 굴릴 동료다. 사람을 새로 들이면 수습
+기간을 두고 일을 시켜보며 가르치듯, 코봇에게도 그 과정이 필요하다.
+다듬지 않은 코봇을 세상에 내보내는 것은 검증되지 않은 신입을 첫날부터
+고객 앞에 세우는 일과 같다. 5부는 그 수습 기간을 어떻게 보내는지에 대한
+이야기다.</p>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="ch15.html">← 15장. 스스로 출근하는 코봇</a><a class="pg pg-next" href="ch16.html">16장. Preview →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

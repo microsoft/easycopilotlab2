@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C. 치트시트 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub active"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="부록-c-치트시트">부록 C. 치트시트</h1>
+<blockquote>
+<p>한 장으로 펼쳐 보는 빠른 참조. 본문을 다시 읽기 전에
+용어·탭·능력·비용·설계 판단을 빠르게 확인한다.<br />
+기준: Copilot Studio 새 에이전트 경험, 2026년 6월.<br />
+읽을 사람: 본문을 한 번 본 뒤, 실무 중 용어·탭·판단을 빠르게 확인하려는
+사람.</p>
+</blockquote>
+<hr />
+<h2 id="c1-4탭-한눈에-보기">C1. 4탭 한눈에 보기</h2>
+<table>
+<thead>
+<tr>
+<th>탭</th>
+<th>무엇을 하나</th>
+<th>책의 장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Build</strong></td>
+<td>지침, 지식, 도구·스킬, 모델, Connected agents를 구성</td>
+<td>6~12장</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>대화로 시험하고 추론·도구 호출을 확인</td>
+<td>16~17장</td>
+</tr>
+<tr>
+<td><strong>Evaluate</strong></td>
+<td>테스트셋으로 품질을 반복 측정</td>
+<td>18장</td>
+</tr>
+<tr>
+<td><strong>Monitor</strong></td>
+<td>게시 후 작업·활동·접근 파일·운영 상태를 확인</td>
+<td>20장</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c2-build-components-빠른-표">C2. Build components 빠른 표</h2>
+<table>
+<thead>
+<tr>
+<th>구성요소</th>
+<th>한 줄 정의</th>
+<th>비유</th>
+<th>먼저 볼 장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instructions</td>
+<td>코봇의 역할·범위·행동 원칙</td>
+<td>행동 매뉴얼</td>
+<td>8장</td>
+</tr>
+<tr>
+<td>Knowledge</td>
+<td>답변 근거가 되는 읽기 전용 자료</td>
+<td>교과서·사내망</td>
+<td>10장</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>사용자·맥락에 대한 지속 기억(opt-in)</td>
+<td>기억하는 동료</td>
+<td>10장</td>
+</tr>
+<tr>
+<td>Tools and skills</td>
+<td>행동하는 도구와 재사용 업무 매뉴얼</td>
+<td>손발 + 모자</td>
+<td>8·11장</td>
+</tr>
+<tr>
+<td>Model</td>
+<td>추론을 맡는 모델 선택</td>
+<td>두뇌</td>
+<td>7장</td>
+</tr>
+<tr>
+<td>Connected agents</td>
+<td>독립 전문가 에이전트 연결</td>
+<td>후배 전문가</td>
+<td>12장</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c3-skill--tool--workflow-구분">C3. Skill / Tool / Workflow
+구분</h2>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>무엇을 맡나</th>
+<th>예</th>
+<th>착각 금지</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Skill</strong></td>
+<td>산출물을 <strong>어떻게 만들지</strong></td>
+<td>기획서, 일정표, 리스크 레지스터 작성법</td>
+<td>파일 업로드·메일 발송을 직접 하지 않음</td>
+</tr>
+<tr>
+<td><strong>Tool</strong></td>
+<td>외부 시스템에 <strong>실제로 행동</strong></td>
+<td>Teams 발송, SharePoint 업로드, API 호출</td>
+<td>지식 검색과 다름</td>
+</tr>
+<tr>
+<td><strong>Workflow</strong></td>
+<td>정해진 절차를 <strong>같은 순서로 실행</strong></td>
+<td>승인 라우팅, 정기 보고, 등록 절차</td>
+<td>이 책의 플로봇은 새 Workflows, 옛 agent flows가 아님</td>
+</tr>
+<tr>
+<td><strong>Knowledge</strong></td>
+<td>답변 근거를 <strong>읽어 참고</strong></td>
+<td>SharePoint 템플릿, Dataverse 레코드</td>
+<td>쓰기·수정 권한이 아님</td>
+</tr>
+</tbody>
+</table>
+<p>한 장면으로 보면 이렇다.</p>
+<pre class="text"><code>“다음 달 워크숍 계획서를 만들고 팀 채널에 올려줘”
+→ Skill: 계획서 내용을 만든다
+→ Knowledge: 회사 워크숍 템플릿을 참고한다
+→ Tool/Workflow: 문서화하고 SharePoint/Teams에 올린다
+→ Monitor: 실행 결과를 확인한다</code></pre>
+<h2 id="c4-agent냐-workflow냐">C4. Agent냐 Workflow냐</h2>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>Agent(코봇)</th>
+<th>Workflow(플로봇)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매번 판단이 필요한가?</td>
+<td>예</td>
+<td>아니오</td>
+</tr>
+<tr>
+<td>입력이 모호한가?</td>
+<td>예</td>
+<td>아니오, 정형 입력</td>
+</tr>
+<tr>
+<td>같은 입력에 같은 절차가 필요한가?</td>
+<td>꼭 그렇지 않음</td>
+<td>예</td>
+</tr>
+<tr>
+<td>실패·재시도·승인 흐름이 중요한가?</td>
+<td>Tool/Workflow와 조합</td>
+<td>Workflow가 중심</td>
+</tr>
+<tr>
+<td>대표 예</td>
+<td>보고서 초안, 리스크 판단, 고객 맥락 요약</td>
+<td>승인 요청, 일정 트리거, 시스템 등록</td>
+</tr>
+</tbody>
+</table>
+<p><strong>한 문장:</strong> 판단은 코봇, 절차는 플로봇. 둘은 agent
+node와 도구 호출로 양방향 협업한다.</p>
+<h2 id="c5-클래식--신버전-용어-변환">C5. 클래식 → 신버전 용어 변환</h2>
+<table>
+<thead>
+<tr>
+<th>클래식/옛 표현</th>
+<th>신버전에서 이렇게 말한다</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Topic</td>
+<td>Skill + Workflows</td>
+</tr>
+<tr>
+<td>Trigger phrases</td>
+<td>Skill description, 지침, 오케스트레이션</td>
+</tr>
+<tr>
+<td>Prompts</td>
+<td>Agent에서는 skills, Workflow에서는 agent node</td>
+</tr>
+<tr>
+<td>Child agent</td>
+<td>Skills + Connected agents</td>
+</tr>
+<tr>
+<td>Agent flows(옛 방식)</td>
+<td>새 Workflows와 구분. 이 책의 플로봇은 새 Workflows</td>
+</tr>
+<tr>
+<td>9개 분산 탭</td>
+<td>Build · Preview · Evaluate · Monitor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c6-비용-캐논-요약">C6. 비용 캐논 요약</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>정확한 표현</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>기본 과금</td>
+<td>사용량/메시지 단위 <strong>Copilot Credits</strong> 중심</td>
+</tr>
+<tr>
+<td>Workflows</td>
+<td>실행 액션마다 Copilot Studio 용량 소비</td>
+</tr>
+<tr>
+<td>Model 선택</td>
+<td>모델 셀렉터 변경 자체가 과금 레버는 아님. 품질·지연·역량의 선택</td>
+</tr>
+<tr>
+<td>Prompts</td>
+<td>신버전 에이전트에서 현재 기능처럼 설명하지 않는다. Skills/agent
+node로 대체됨</td>
+</tr>
+<tr>
+<td>BYOM</td>
+<td>Azure AI Foundry 등 직접 가져온 모델은 <strong>별도 과금</strong>
+가능</td>
+</tr>
+<tr>
+<td>비용 관리</td>
+<td>모델 이름보다 사용량, 트리거 빈도, Workflow 실행 수, BYOM 사용
+여부를 본다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c7-지침에서-자주-하는-실수-6가지와-고쳐쓰기">C7. 지침에서 자주
+하는 실수 6가지와 고쳐쓰기</h2>
+<table>
+<thead>
+<tr>
+<th>실수</th>
+<th>나쁜 예</th>
+<th>고쳐쓰기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>역할이 막연하다</td>
+<td>“도움을 주는 비서”</td>
+<td>“사내 워크숍 PM. 기획·일정·예산·리스크·보고 초안 담당”</td>
+</tr>
+<tr>
+<td>범위 가드가 없다</td>
+<td>(하지 않을 일을 안 적음)</td>
+<td>“법무 자문·회계 확정은 하지 않고 담당 부서를 안내한다”</td>
+</tr>
+<tr>
+<td>모를 때 행동이 없다</td>
+<td>“최선을 다해 답한다”</td>
+<td>“확실하지 않으면 추측 말고 ‘확인이 필요합니다’ 후 1~3개만 질문”</td>
+</tr>
+<tr>
+<td>우선순위가 없다</td>
+<td>“친절하고 정확하게”</td>
+<td>“정확성·정책이 친절·속도보다 우선. 충돌 시 멈추고 이유를 설명”</td>
+</tr>
+<tr>
+<td>출력 형식이 없다</td>
+<td>“보고서를 써줘”</td>
+<td>“결론 5줄 → 이슈 표 → 다음 행동 순서로 고정한다”</td>
+</tr>
+<tr>
+<td>절차까지 지침에 넣는다</td>
+<td>기획서 20단계를 Instructions에</td>
+<td>공통 원칙만 지침에, 산출물 절차는 9장 Skill로 분리</td>
+</tr>
+</tbody>
+</table>
+<p>본문 8장이 “왜”를 설명한다면, 이 카드는 지침을 다 쓴 뒤
+<strong>마지막으로 훑는 점검표</strong>다.</p>
+<h2 id="c8-skill-작성-체크리스트">C8. Skill 작성 체크리스트</h2>
+<table>
+<thead>
+<tr>
+<th>체크</th>
+<th>기준</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이름</td>
+<td>소문자와 하이픈 중심: <code>schedule-designer</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td>“언제 쓰는가 + 무엇을 만드는가”가 선명함</td>
+</tr>
+<tr>
+<td>범위</td>
+<td>한 직무·한 산출물 중심. 만능 스킬 금지</td>
+</tr>
+<tr>
+<td>절차</td>
+<td>5~7단계 정도로 동사형 작성</td>
+</tr>
+<tr>
+<td>품질 기준</td>
+<td>추측 금지, 형식, 질문 기준 포함</td>
+</tr>
+<tr>
+<td>노트</td>
+<td>다음 Skill, 관련 Knowledge, Tool 경계 표시</td>
+</tr>
+<tr>
+<td>검증</td>
+<td>Preview에서 실제 호출 여부 확인</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c9-코봇의-5스킬-흐름">C9. 코봇의 5스킬 흐름</h2>
+<table>
+<thead>
+<tr>
+<th>순서</th>
+<th>Skill</th>
+<th>산출물</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>project-planner</code></td>
+<td>프로젝트 기획서</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>schedule-designer</code></td>
+<td>일정표/WBS</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>budget-resource</code></td>
+<td>예산안·자원 계획</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>risk-checker</code></td>
+<td>리스크 레지스터</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>reporter</code></td>
+<td>상태보고서</td>
+</tr>
+</tbody>
+</table>
+<pre class="text"><code>프로젝트 시작 → 기획 → 일정 → 예산 → 리스크 → 보고</code></pre>
+<h2 id="c10-자주-하는-실수와-교정">C10. 자주 하는 실수와 교정</h2>
+<table>
+<thead>
+<tr>
+<th>실수</th>
+<th>증상</th>
+<th>교정</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클래식 토픽을 신버전 기능처럼 설명</td>
+<td>범위 락 위반</td>
+<td>부록 A에서만 클래식으로 다룬다</td>
+</tr>
+<tr>
+<td>Skill description이 모호</td>
+<td>스킬 호출 누락·오작동</td>
+<td>호출 상황과 산출물을 구체화</td>
+</tr>
+<tr>
+<td>Skill에 행동을 맡김</td>
+<td>“보냈다”고 말하지만 실제 발송 없음</td>
+<td>Tool/Workflow로 실행 경로 설계</td>
+</tr>
+<tr>
+<td>Knowledge와 Tool 혼동</td>
+<td>읽기 자료로 업로드를 기대</td>
+<td>읽기는 Knowledge, 쓰기는 Tool</td>
+</tr>
+<tr>
+<td>무인 트리거에 통제점 없음</td>
+<td>사고가 조용히 반복</td>
+<td>승인 게이트, 실행 한도, Monitor 설계</td>
+</tr>
+<tr>
+<td>비용을 모델 셀렉터로만 관리</td>
+<td>과금 이해 오류</td>
+<td>사용량·Workflow 실행·BYOM을 본다</td>
+</tr>
+<tr>
+<td>Connected agents를 옛 child agent처럼 설명</td>
+<td>신버전 구조 오해</td>
+<td>12장 슈퍼호스트 기준으로 설명</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c11-한영-용어-대조">C11. 한영 용어 대조</h2>
+<table>
+<thead>
+<tr>
+<th>한국어</th>
+<th>영문</th>
+<th>이 책의 표현</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>에이전트</td>
+<td>Agent</td>
+<td>코봇</td>
+</tr>
+<tr>
+<td>워크플로</td>
+<td>Workflow</td>
+<td>플로봇</td>
+</tr>
+<tr>
+<td>지침</td>
+<td>Instructions</td>
+<td>행동 매뉴얼</td>
+</tr>
+<tr>
+<td>스킬</td>
+<td>Skill</td>
+<td>업무 매뉴얼, 모자</td>
+</tr>
+<tr>
+<td>지식</td>
+<td>Knowledge</td>
+<td>교과서·사내망</td>
+</tr>
+<tr>
+<td>기억</td>
+<td>Memory</td>
+<td>지속 맥락</td>
+</tr>
+<tr>
+<td>도구</td>
+<td>Tool</td>
+<td>손발</td>
+</tr>
+<tr>
+<td>연결된 에이전트</td>
+<td>Connected agents</td>
+<td>전문가 팀</td>
+</tr>
+<tr>
+<td>슈퍼호스트</td>
+<td>Superhost</td>
+<td>팀장 코봇</td>
+</tr>
+<tr>
+<td>평가</td>
+<td>Evaluate</td>
+<td>품질 시험</td>
+</tr>
+<tr>
+<td>모니터</td>
+<td>Monitor</td>
+<td>운영 관제</td>
+</tr>
+<tr>
+<td>거버넌스</td>
+<td>Governance</td>
+<td>조직 통제</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="appendix-b.html">← B. 프로코드로 확장</a><a class="pg pg-next" href="appendix-d.html">D. 설계 패턴 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

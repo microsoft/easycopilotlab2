@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="470" viewBox="0 0 980 470">
+<rect x="0" y="0" width="980" height="470" rx="20" fill="#fff" stroke="#E5E7EB" stroke-width="1.5"/>
+<text x="40" y="48" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="22" font-weight="800" fill="#1F2430">5장 — 화면은 주장이다: 트레이 7칸을 프로젝트와 잇기</text>
+<rect x="60" y="66" width="150" height="34" rx="8" fill="#2563EB" stroke="#2563EB" stroke-width="2" />
+<text x="135" y="89" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">Build</text>
+<rect x="220" y="66" width="150" height="34" rx="8" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="295" y="89" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#2563EB" text-anchor="middle">Preview</text>
+<rect x="380" y="66" width="150" height="34" rx="8" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="455" y="89" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#2563EB" text-anchor="middle">Evaluate</text>
+<rect x="540" y="66" width="150" height="34" rx="8" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="615" y="89" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#2563EB" text-anchor="middle">Monitor</text>
+<rect x="60" y="118" width="360" height="320" rx="16" fill="#EFF4FF" stroke="#2563EB" stroke-width="2" />
+<text x="240" y="150" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="800" fill="#2563EB" text-anchor="middle">중앙 — Instructions(지침)</text>
+<text x="240" y="178" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="middle">코봇이 누구인지를 쓰는 캔버스</text>
+<rect x="84" y="196" width="312" height="210" rx="12" fill="#fff" stroke="#2563EB" stroke-width="2" />
+<text x="104" y="228" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#1F2430" text-anchor="start">"여름 신제품 출시 PM…"</text>
+<text x="104" y="262" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#1F2430" text-anchor="start">역할·범위·태도·원칙</text>
+<text x="104" y="296" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#1F2430" text-anchor="start">모를 때 행동 정의</text>
+<text x="104" y="330" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="500" fill="#1F2430" text-anchor="start">…</text>
+<rect x="470" y="118" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="143" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Model</text>
+<text x="690" y="143" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 두뇌 — 모델</text>
+<rect x="470" y="164" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="189" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Microsoft IQ</text>
+<text x="690" y="189" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 조직 데이터 그라운딩</text>
+<rect x="470" y="210" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="235" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Skills</text>
+<text x="690" y="235" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 전문성 5종</text>
+<rect x="470" y="256" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="281" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Tools</text>
+<text x="690" y="281" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 문서 생성·업로드</text>
+<rect x="470" y="302" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="327" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Knowledge</text>
+<text x="690" y="327" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 표준 템플릿·아카이브</text>
+<rect x="470" y="348" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="373" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Connected agents</text>
+<text x="690" y="373" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 전문가 팀</text>
+<rect x="470" y="394" width="450" height="40" rx="10" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="486" y="419" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="800" fill="#1F2430" text-anchor="start">Memory</text>
+<text x="690" y="419" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="500" fill="#5B6472" text-anchor="start">→ 나는 PM</text>
+<text x="470" y="452" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="12.5" font-weight="600" fill="#2563EB" text-anchor="start">배치가 곧 우선순위 — 화면이 무엇이 중요한지 말한다</text>
+</svg>

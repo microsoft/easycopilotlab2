@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A. 클래식 경험 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub active"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="부록-a-클래식-경험">부록 A. 클래식 경험</h1>
+<blockquote>
+<p>토픽·노드·변수로 대화 대본을 그리던 옛 방식. 이 부록은 클래식을
+신버전처럼 쓰기 위한 장이 아니라, <strong>무엇이 달라졌는지</strong>를
+안전하게 구분하기 위한 참조표다.<br />
+확인 기준: Microsoft Learn <code>agents-experience/overview</code>,
+<code>agents-experience/classic-vs-new</code>(2026년 6월).<br />
+읽을 사람: 클래식에서 넘어왔거나, 옛 자료·기존 봇과 신버전을 구분해야
+하는 사람.</p>
+</blockquote>
+<hr />
+<h2 id="a1-먼저-결론">A1. 먼저 결론</h2>
+<p>이 책의 본문 기준은 Copilot Studio <strong>새 에이전트 경험(new agent
+experience)</strong>이다. 새 경험에서는 토픽을 그리지 않는다. 에이전트의 목적과
+행동을 자연어로 설명하고, Build 탭에서 지침·지식·도구·스킬·모델·연결된
+에이전트를 구성한다.</p>
+<p>클래식은 여전히 볼 수 있지만 <strong>옛 방식</strong>이다. 기존
+클래식 에이전트는 계속 유지할 수 있고, 특정 기능이 아직 새 경험에 없거나
+한 치의 대화 흐름 제어가 필요할 때 클래식을 살펴볼 수 있다. 다만 새
+경험과 클래식은 런타임과 아키텍처가 달라 <strong>상호 이전할 수
+없다</strong>. 클래식 에이전트를 새 경험으로 가져오는 버튼도, 새 경험
+에이전트를 클래식으로 되돌리는 버튼도 없다.</p>
+<table>
+<thead>
+<tr>
+<th>한 줄 요약</th>
+<th>클래식</th>
+<th>신버전</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>만드는 감각</td>
+<td>흐름도를 그린다</td>
+<td>업무 매뉴얼을 쓴다</td>
+</tr>
+<tr>
+<td>중심 단위</td>
+<td>Topic, node, trigger phrase</td>
+<td>Instructions, Skill, Workflows</td>
+</tr>
+<tr>
+<td>제어 방식</td>
+<td>명시적 분기·노드</td>
+<td>향상된 오케스트레이션과 추론</td>
+</tr>
+<tr>
+<td>쓰는 경우</td>
+<td>기존 자산 유지, 정밀 대화 흐름</td>
+<td>새 에이전트 구축, M365 데이터 기반 추론, 장기 작업</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2-화면으로-구분하는-법">A2. 화면으로 구분하는 법</h2>
+<p>Microsoft Learn의 구분은 단순하다. 클래식은 Topics, Knowledge,
+Actions, Settings 같은 영역이 따로 보이고, 캔버스에서 토픽·노드·분기
+로직을 편집한다. 새 경험은 상단의 <strong>Build · Preview · Evaluate ·
+Monitor</strong> 네 탭이 중심이다.</p>
+<table>
+<thead>
+<tr>
+<th>확인 지점</th>
+<th>클래식 경험</th>
+<th>새 에이전트 경험</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>작성 표면</td>
+<td>캔버스와 여러 설정 영역</td>
+<td>4개 탭: Build, Preview, Evaluate, Monitor</td>
+</tr>
+<tr>
+<td>Build에 해당하는 곳</td>
+<td>Topics·Knowledge·Actions·Settings 등이 분리</td>
+<td>Instructions, Knowledge, Tools and skills, Model, Connected agents가
+Build에 통합</td>
+</tr>
+<tr>
+<td>테스트</td>
+<td>토픽/대화 테스트 중심</td>
+<td>Preview와 Evaluate가 작성 루프 안에 있음</td>
+</tr>
+<tr>
+<td>운영 확인</td>
+<td>Analytics/Monitor 계열 화면</td>
+<td>Monitor 탭에서 최근 작업·활동·접근 파일 확인</td>
+</tr>
+<tr>
+<td>오케스트레이션</td>
+<td>classic/generative 모드 선택 가능</td>
+<td>향상된 오케스트레이션이 모든 에이전트에 적용, 끌 수 없음</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>판별 팁</strong><br />
+화면 위에 Build · Preview · Evaluate · Monitor가 보이면 새 경험이다.
+왼쪽에 Topics가 독립 메뉴로 보이고 토픽 캔버스를 편집하고 있다면
+클래식이다.</p>
+</blockquote>
+<h2 id="a3-클래식-개념-대응표">A3. 클래식 개념 대응표</h2>
+<p>토픽은 Skill 하나로만 바뀐 것이 아니다. 새 경험에서는 <strong>Skill +
+Workflows</strong>가 함께 토픽의 자리를 나누어 맡는다. 코봇이 상황을
+판단하며 수행할 업무 전문성은 Skill로, 반드시 같은 순서로 돌아야 하는
+절차는 새 <strong>Workflows(플로봇)</strong>로 설계한다.</p>
+<table>
+<thead>
+<tr>
+<th>클래식 개념</th>
+<th>클래식에서의 뜻</th>
+<th>신버전 대응</th>
+<th>주의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Topic</td>
+<td>사용자의 의도에 반응하는 대화 대본</td>
+<td><strong>Skill + Workflows</strong></td>
+<td>업무 매뉴얼은 Skill, 결정적 절차는 Workflows</td>
+</tr>
+<tr>
+<td>Trigger phrases</td>
+<td>토픽을 깨우는 예시 문장</td>
+<td>Skill description, 지침, 오케스트레이션</td>
+<td>예시문 매칭보다 의미 판단 중심</td>
+</tr>
+<tr>
+<td>Node</td>
+<td>메시지·질문·조건·액션 호출 단위</td>
+<td>지침, Skill 절차, Workflow 노드</td>
+<td>대화 노드 캔버스는 클래식 개념</td>
+</tr>
+<tr>
+<td>Branching logic</td>
+<td>조건에 따른 대화 분기</td>
+<td>Workflows의 조건·분기 또는 에이전트 추론</td>
+<td>규칙 기반이면 Workflows로 빼는 편이 안전</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>대화 중 값 저장</td>
+<td>Workflow 변수, Tool 입출력, 대화 맥락</td>
+<td>장기 기억은 Memory와 구분</td>
+</tr>
+<tr>
+<td>Entities/slot filling</td>
+<td>값 추출과 되묻기</td>
+<td>지침·Skill의 확인 질문, Workflow 입력</td>
+<td>정형 입력 수집은 Workflow가 안정적</td>
+</tr>
+<tr>
+<td>Actions/flows 호출</td>
+<td>토픽 안에서 외부 실행</td>
+<td>Tools, Workflows as tools</td>
+<td>신 Workflows는 옛 agent flows와 구분</td>
+</tr>
+<tr>
+<td>Prompts</td>
+<td>AI 프롬프트 기능</td>
+<td>Agent에서는 Skill, Workflow에서는 agent node</td>
+<td>신버전 본문에서 현재 기능처럼 쓰지 말 것</td>
+</tr>
+<tr>
+<td>Child agents</td>
+<td>하위 에이전트 호출</td>
+<td>Skills + Connected agents</td>
+<td>12장의 슈퍼호스트는 Connected agents 기준</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a4-9탭에서-4탭으로-정신-모델의-변화">A4. 9탭에서 4탭으로: 정신
+모델의 변화</h2>
+<p>클래식은 작성·지식·액션·게시·분석·설정이 여러 화면에 흩어져 있었다.
+조직과 시점에 따라 세부 이름은 조금씩 달랐지만, 실무자는 보통 “토픽은
+어디, 액션은 어디, 지식은 어디, 설정은 어디”를 따로 찾아다녔다. 새
+경험은 이를 라이프사이클 중심의 네 탭으로 압축한다.</p>
+<table>
+<thead>
+<tr>
+<th>옛 분산 영역(대표)</th>
+<th>새 경험 위치</th>
+<th>책의 장</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Topics</td>
+<td>Skill + Workflows</td>
+<td>9장, 4부</td>
+</tr>
+<tr>
+<td>Knowledge</td>
+<td>Build &gt; Knowledge</td>
+<td>10장</td>
+</tr>
+<tr>
+<td>Actions/flows</td>
+<td>Build &gt; Tools and skills, Workflows</td>
+<td>11장, 4부</td>
+</tr>
+<tr>
+<td>Entities/variables</td>
+<td>Workflow 입력·변수, Tool 입출력</td>
+<td>13~15장</td>
+</tr>
+<tr>
+<td>Analytics/monitoring</td>
+<td>Monitor</td>
+<td>20장</td>
+</tr>
+<tr>
+<td>Test/evaluation</td>
+<td>Preview, Evaluate</td>
+<td>16~18장</td>
+</tr>
+<tr>
+<td>Publish/channels</td>
+<td>게시·공유 흐름</td>
+<td>19장</td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>Build 구성요소와 설정</td>
+<td>6~8장, 21장</td>
+</tr>
+<tr>
+<td>Agent-to-agent 구성</td>
+<td>Connected agents</td>
+<td>12장</td>
+</tr>
+</tbody>
+</table>
+<p>핵심은 메뉴 수가 줄었다는 사실이 아니다. 제품이 “대화 대본
+편집기”에서 “AI 직원을 키우는 라이프사이클 표면”으로 바뀌었다는
+점이다.</p>
+<h2 id="a5-언제-클래식을-아직-볼-수-있나">A5. 언제 클래식을 아직 볼 수
+있나</h2>
+<table>
+<thead>
+<tr>
+<th>상황</th>
+<th>클래식을 볼 가능성</th>
+<th>새 경험에서 먼저 검토할 대안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이미 운영 중인 클래식 에이전트 유지</td>
+<td>높음</td>
+<td>그대로 운영하면서 신규는 새 경험으로 설계</td>
+</tr>
+<tr>
+<td>토픽 단위의 세밀한 대화 제어가 필요</td>
+<td>있음</td>
+<td>Workflows + 명확한 지침으로 대체 가능한지 검토</td>
+</tr>
+<tr>
+<td>특정 클래식 기능에 의존</td>
+<td>있음</td>
+<td>새 경험 지원 여부 확인 후 재설계</td>
+</tr>
+<tr>
+<td>새로 만드는 업무 에이전트</td>
+<td>낮음</td>
+<td>새 경험으로 시작</td>
+</tr>
+<tr>
+<td>M365 데이터 기반 추론·장기 작업</td>
+<td>낮음</td>
+<td>새 경험 권장</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>현장에서</strong><br />
+“정확히 같은 순서로 돌아야 한다”는 요구가 나오면 곧바로 클래식으로
+돌아가지 말고, 먼저 4부의 Workflows를 검토한다. 결정적 절차는 이제
+플로봇이 맡는 것이 새 경험의 기본 설계다.</p>
+</blockquote>
+<h2 id="a6-공존과-마이그레이션">A6. 공존과 마이그레이션</h2>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>답</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클래식과 새 경험이 함께 존재하나?</td>
+<td>그렇다. 기존 클래식은 계속 유지되고, 새 경험은 별도 선택으로
+들어간다.</td>
+</tr>
+<tr>
+<td>클래식 에이전트를 새 경험으로 이전할 수 있나?</td>
+<td>2026년 6월 Learn 기준, 이전할 수 없다.</td>
+</tr>
+<tr>
+<td>새 경험 에이전트를 클래식으로 되돌릴 수 있나?</td>
+<td>이전할 수 없다.</td>
+</tr>
+<tr>
+<td>그럼 기존 토픽 자산은 버려야 하나?</td>
+<td>아니다. 토픽이 이루려던 업무 목적·분기 기준·응답 문구를 읽어 Skill과
+Workflows로 <strong>재설계</strong>한다.</td>
+</tr>
+<tr>
+<td>클래식 agent flows는 어떻게 되나?</td>
+<td>옛 방식으로 남아 있다. 이 책의 플로봇은 새 Workflows이며, 둘을
+혼동하지 않는다.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a7-토픽을-skillworkflows로-재설계하는-최소-절차">A7. 토픽을
+Skill+Workflows로 재설계하는 최소 절차</h2>
+<ol type="1">
+<li><strong>토픽의 목적을 한 문장으로 적는다.</strong> “사용자의 휴가
+규정을 안내한다”인지, “휴가 신청을 접수한다”인지 구분한다.</li>
+<li><strong>판단과 절차를 나눈다.</strong> 설명·요약·초안 작성은 Skill,
+승인·등록·발송은 Workflows/Tool 후보로 분리한다.</li>
+<li><strong>트리거 구문을 description으로 바꾼다.</strong> 예시문 목록을
+“언제 이 Skill을 쓰는가” 문장으로 다시 쓴다.</li>
+<li><strong>분기표를 규칙표로 바꾼다.</strong> 조건이 엄격하면 Workflow
+조건으로, 유연한 판단이면 Skill 가이드라인으로 옮긴다.</li>
+<li><strong>변수와 액션을 입출력으로 정리한다.</strong> 코봇이 무엇을
+물어야 하고, 플로봇이 무엇을 받아 실행해야 하는지 정의한다.</li>
+<li><strong>Preview와 Evaluate로 검증한다.</strong> 한 번에 완벽히
+옮기려 하지 말고 대표 대화 5~10개로 재설계 품질을 확인한다.</li>
+</ol>
+<h2 id="핵심-정리">핵심 정리</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>요점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>클래식은 토픽·노드·분기 중심의 옛 경험이고, 신버전은
+지침·Skill·Workflows 중심의 새 경험이다.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>토픽은 Skill 하나가 아니라 <strong>Skill + Workflows
+조합</strong>으로 대체된다.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>새 경험은 Build · Preview · Evaluate · Monitor 네 탭으로
+라이프사이클을 압축한다.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>클래식과 새 경험은 공존하지만, 에이전트 상호 이전은 불가하다.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>결정적 절차가 필요하면 먼저 새 Workflows를 검토하고, 클래식은 기존
+자산 유지나 미지원 기능 의존 시에만 선택한다.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="appendix.html">← 부록</a><a class="pg pg-next" href="appendix-b.html">B. 프로코드로 확장 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

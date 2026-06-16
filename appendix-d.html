@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D. 설계 패턴 · 코봇 키우기</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<button id="menuToggle" aria-label="목차 열기">☰ 목차</button>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html">
+      <span class="brand-title">코봇 키우기</span>
+      <span class="brand-sub">답하는 챗봇에서 일을 끝내는 AI 직원으로</span>
+    </a>
+    <a class="side-dl" href="cobot-book.pdf" download>📘 전체 PDF 내려받기</a>
+    <ul class="toc">
+<li class="toc-home"><a href="index.html">표지·머리말</a></li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">1부. 왜</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part1.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch01.html">1장. 챗봇은 죽었다</a></li>
+    <li class="toc-sub"><a href="ch02.html">2장. 새로 지은 집</a></li>
+    <li class="toc-sub"><a href="ch03.html">3장. 두 갈래 길</a></li>
+    <li class="toc-sub"><a href="ch04.html">4장. 지침이 곧 실력</a></li>
+    <li class="toc-sub"><a href="ch05.html">5장. 화면은 주장이다</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">2부. 들인다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part2.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch06.html">6장. 어디에 만들 것인가</a></li>
+    <li class="toc-sub"><a href="ch07.html">7장. 코봇이 태어난다</a></li>
+    <li class="toc-sub"><a href="ch08.html">8장. 지침 쓰기</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">3부. 가르친다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part3.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch09.html">9장. 한 사람이 한 팀처럼</a></li>
+    <li class="toc-sub"><a href="ch10.html">10장. 지식과 기억</a></li>
+    <li class="toc-sub"><a href="ch11.html">11장. 손발을 달다</a></li>
+    <li class="toc-sub"><a href="ch12.html">12장. 후배가 생긴 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">4부. 자동화한다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part4.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch13.html">13장. 플로봇의 무대</a></li>
+    <li class="toc-sub"><a href="ch14.html">14장. 두 갈래 길이 만나다</a></li>
+    <li class="toc-sub"><a href="ch15.html">15장. 스스로 출근하는 코봇</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">5부. 다듬는다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part5.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch16.html">16장. Preview</a></li>
+    <li class="toc-sub"><a href="ch17.html">17장. 머릿속 들여다보기</a></li>
+    <li class="toc-sub"><a href="ch18.html">18장. Evaluate</a></li>
+  </ul>
+</li>
+<li class="toc-part">
+  <button class="toc-part-btn" type="button" aria-expanded="false"><span class="toc-caret">▸</span><span class="toc-part-label">6부. 내보낸다</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="part6.html">들어가며</a></li>
+    <li class="toc-sub"><a href="ch19.html">19장. 게시와 공유</a></li>
+    <li class="toc-sub"><a href="ch20.html">20장. Monitor</a></li>
+    <li class="toc-sub"><a href="ch21.html">21장. 가드레일·거버넌스·ALM</a></li>
+  </ul>
+</li>
+<li class="toc-part open">
+  <button class="toc-part-btn" type="button" aria-expanded="true"><span class="toc-caret">▸</span><span class="toc-part-label">부록</span></button>
+  <ul class="toc-children">
+    <li class="toc-sub toc-intro"><a href="appendix.html">들어가며</a></li>
+    <li class="toc-sub"><a href="appendix-a.html">A. 클래식 경험</a></li>
+    <li class="toc-sub"><a href="appendix-b.html">B. 프로코드로 확장</a></li>
+    <li class="toc-sub"><a href="appendix-c.html">C. 치트시트</a></li>
+    <li class="toc-sub active"><a href="appendix-d.html">D. 설계 패턴</a></li>
+    <li class="toc-sub"><a href="appendix-e.html">E. 능력 카탈로그</a></li>
+    <li class="toc-sub"><a href="appendix-f.html">F. CLI 런타임 해부</a></li>
+    <li class="toc-sub"><a href="appendix-g.html">G. 용어 빠른 풀이</a></li>
+  </ul>
+</li>
+</ul>
+    <div class="side-meta">
+      <span class="ver">v2.8</span>
+      <span class="upd">최종 수정 2026-06-16</span>
+    </div>
+  </aside>
+  <main class="content">
+    <article class="prose">
+<h1 id="부록-d-설계-패턴">부록 D. 설계 패턴</h1>
+<blockquote>
+<p>자주 쓰는 Copilot Studio 신버전 설계 패턴을 “문제 → 해법 → 주의”
+형식으로 모은 실무 카탈로그. 자세한 능력 목록은 부록 E를 본다.<br />
+읽을 사람: 무엇을 만들지는 정했고, 어떤 구조로 풀지 고민하는 사람.</p>
+</blockquote>
+<hr />
+<h2 id="d1-패턴을-고르는-빠른-질문">D1. 패턴을 고르는 빠른 질문</h2>
+<table>
+<thead>
+<tr>
+<th>질문</th>
+<th>예면</th>
+<th>아니오면</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매번 판단이 필요한가?</td>
+<td>Agent/Skill 중심</td>
+<td>Workflow 중심</td>
+</tr>
+<tr>
+<td>결과를 실제 시스템에 써야 하나?</td>
+<td>Tool 또는 Workflow 필요</td>
+<td>Skill/Knowledge만으로 가능</td>
+</tr>
+<tr>
+<td>같은 절차가 반복되나?</td>
+<td>Workflow로 고정</td>
+<td>Agent가 유연하게 처리</td>
+</tr>
+<tr>
+<td>독립 소유·평가가 필요한 전문성인가?</td>
+<td>Connected agent 분화</td>
+<td>Skill로 충분</td>
+</tr>
+<tr>
+<td>사람 없이 돌아야 하나?</td>
+<td>Trigger + 통제점</td>
+<td>Preview 기반 수동 사용</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d15-코봇-유형-지도--목적으로-나눈-네-무리">D1.5. 코봇 유형 지도
+— 목적으로 나눈 네 무리</h2>
+<p>D2부터의 패턴이 “어떻게 엮는가”(메커니즘)라면, 그 앞에 “무엇을 위한
+코봇인가”(목적)로 한 번 갈라 두면 새 요청을 빠르게 자리매김할 수 있다.
+각 유형은 신버전 구성요소의 조합으로 구현된다.</p>
+<blockquote>
+<p>범례: K=Knowledge, T=Tool, W=Workflow(플로봇을 도구로 연결),
+CA=Connected agents</p>
+</blockquote>
+<h3 id="a-지식-응답형--아는-것을-알려주는-코봇">A. 지식 응답형 — 아는
+것을 알려주는 코봇</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>한 문장 의도</th>
+<th>핵심 구성</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A-1 지식 Q&amp;A</strong></td>
+<td>사내 문서·데이터를 검색해 답한다</td>
+<td>K + 오케스트레이션</td>
+<td>취업규칙 안내 / 매뉴얼 Q&amp;A</td>
+</tr>
+<tr>
+<td><strong>A-2 문서 생성기</strong></td>
+<td>표준 양식으로 문서를 자동 작성한다</td>
+<td>K + W(Word·Teams 출력)</td>
+<td>주간보고 초안 / 계약서 작성</td>
+</tr>
+<tr>
+<td><strong>A-3 외부 모니터</strong></td>
+<td>외부 웹·규제를 주기 수집해 요약 알림</td>
+<td>K(웹) + W(일정 트리거)</td>
+<td>공시 모니터링 / 규제 변경 알림</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b-업무-자동화형--정형-업무를-대신-처리하는-코봇">B. 업무
+자동화형 — 정형 업무를 대신 처리하는 코봇</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>한 문장 의도</th>
+<th>핵심 구성</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B-1 폼 워크플로</strong></td>
+<td>현장 입력을 수집해 시스템에 등록</td>
+<td>W(수집→등록)</td>
+<td>설비 이상 보고 / 재고 실사</td>
+</tr>
+<tr>
+<td><strong>B-2 결재 라우팅</strong></td>
+<td>분류 후 적절한 결재자에게 전달</td>
+<td>W(HITL 승인) + T(분류)</td>
+<td>지출결의 분류 / 검토 요청</td>
+</tr>
+<tr>
+<td><strong>B-3 일정 알림</strong></td>
+<td>시점·조건 충족 시 자동 알림</td>
+<td>W(일정 트리거 + 알림)</td>
+<td>계약 만기 알림 / KPI 발송</td>
+</tr>
+<tr>
+<td><strong>B-4 대화형 등록</strong></td>
+<td>대화로 슬롯을 채워 자동 등록</td>
+<td>오케스트레이션 + T(CRM·ERP)</td>
+<td>상담 CRM 입력 / IT 티켓 생성</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c-시스템-연동형--바깥-시스템과-잇는-코봇">C. 시스템 연동형 —
+바깥 시스템과 잇는 코봇</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>한 문장 의도</th>
+<th>핵심 구성</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C-1 백엔드 조회</strong></td>
+<td>사내 시스템을 실시간 읽어 답한다</td>
+<td>T(MCP·REST, 읽기)</td>
+<td>SAP 재고 / HR 근태 조회</td>
+</tr>
+<tr>
+<td><strong>C-2 데이터 분석</strong></td>
+<td>표·수치를 가져와 분석·요약</td>
+<td>T(데이터 커넥터) + K</td>
+<td>판매 데이터 분석 / 불량률 추세</td>
+</tr>
+<tr>
+<td><strong>C-3 문서·이미지 추출</strong></td>
+<td>이미지·PDF에서 정형 데이터 추출·등록</td>
+<td>T + W(검증·등록)</td>
+<td>영수증→경비 / 납품서 수량 입력</td>
+</tr>
+<tr>
+<td><strong>C-4 백엔드 쓰기(HITL)</strong></td>
+<td>시스템을 바꾸되 반드시 사람 확인</td>
+<td>T(쓰기) + W(HITL)</td>
+<td>발주 변경→ERP 반영</td>
+</tr>
+<tr>
+<td><strong>C-5 GUI 자동화</strong></td>
+<td>API 없는 레거시를 화면 조작으로 처리</td>
+<td>T(Computer use)</td>
+<td>레거시 ERP 입력 / 포털 반복 작업</td>
+</tr>
+</tbody>
+</table>
+<h3 id="d-오케스트레이션형--다른-코봇을-지휘하는-코봇">D.
+오케스트레이션형 — 다른 코봇을 지휘하는 코봇</h3>
+<table>
+<thead>
+<tr>
+<th>유형</th>
+<th>한 문장 의도</th>
+<th>핵심 구성</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D-1 멀티 코봇 종합</strong></td>
+<td>전문 코봇들의 답을 모아 통합 응답</td>
+<td>CA(Connected agents)</td>
+<td>인사·IT·시설 통합 창구</td>
+</tr>
+</tbody>
+</table>
+<p>D는 12장 슈퍼호스트의 설계 유형이다. 패턴은 하나지만, A·B·C 코봇들을
+묶는 상위 레이어라는 점에서 따로 둔다.</p>
+<p><strong>고르는 순서</strong> — ⓪ 클릭·대화·문서로 사람이 할 수 있나?
+아니면(센서·제어·모델 훈련) → 능력의 경계(D13). ① 여러 전문 코봇을
+조율하나? → D. ② 핵심 가치가 정보면 A, 업무 처리면 B, 시스템 연동이면 C.
+한 코봇이 여러 무리에 걸치면 주(主) 가치로 대표를 정하고
+<code>A-1+C-1</code>처럼 조합 표기하며, 3개 이상이면 D로 분리를
+검토한다.</p>
+<h2 id="d2-패턴-1--5스킬-분철">D2. 패턴 1 — 5스킬 분철</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>에이전트 지침 하나에 모든 업무 절차를 넣어 점점 거대해진다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>직무·산출물 단위로 Skill을 나눈다. 코봇 예제는
+기획·일정·예산·리스크·보고 5개로 분철한다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>Skill은 Workflow가 아니다. 순서를 강제해야 하면 Workflows를 쓴다.
+description이 흐리면 호출이 흔들린다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>9장 Skill, 부록 E2</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>나누기 전</th>
+<th>나눈 뒤</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>project-helper</code>: 프로젝트 업무 전반 지원</td>
+<td><code>project-planner</code>, <code>schedule-designer</code>,
+<code>budget-resource</code>, <code>risk-checker</code>,
+<code>reporter</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="d3-패턴-2--슈퍼호스트와-전문가-에이전트">D3. 패턴 2 —
+슈퍼호스트와 전문가 에이전트</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>어떤 전문성이 너무 커져서 코봇 안의 Skill로 관리하기 어렵다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>독립 에이전트로 분화하고, 코봇은 Connected agents를 지휘하는
+슈퍼호스트가 된다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>신버전에서는 child agent가 아니라 <strong>Connected
+agents</strong>로 설명한다. 연결 대상과 범위는 2026년 기준 제품 지원
+범위를 확인한다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>12장 슈퍼호스트</td>
+</tr>
+</tbody>
+</table>
+<p>분화 판단은 다음 신호를 본다.</p>
+<table>
+<thead>
+<tr>
+<th>신호</th>
+<th>Skill 유지</th>
+<th>별도 에이전트 검토</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>호출 빈도</td>
+<td>가끔</td>
+<td>자주 독립 호출</td>
+</tr>
+<tr>
+<td>지식·도구</td>
+<td>작고 단순</td>
+<td>자체 지식·도구가 큼</td>
+</tr>
+<tr>
+<td>소유권</td>
+<td>같은 팀</td>
+<td>다른 팀이 운영</td>
+</tr>
+<tr>
+<td>평가·배포</td>
+<td>본체와 함께</td>
+<td>독립 평가·배포 필요</td>
+</tr>
+</tbody>
+</table>
+<p>오른쪽 신호가 두 개 이상이면 분화를 검토한다.</p>
+<h2 id="d4-패턴-3--코봇--플로봇-핸드오프">D4. 패턴 3 — 코봇 → 플로봇
+핸드오프</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>앞부분은 판단이 필요하지만, 뒷부분은 정해진 절차로 실행해야
+한다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>코봇이 Skill/Knowledge로 판단·작성한 뒤, Workflow를 도구처럼 호출해
+등록·승인·발송을 맡긴다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>코봇이 넘기는 입력을 명확히 정의한다. 실행 전 사용자 확인이 필요한지
+정한다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>11장 도구, 13~14장 Workflows</td>
+</tr>
+</tbody>
+</table>
+<p>예: 코봇이 워크숍 기획서와 예산안을 만든다 → 플로봇이 승인 요청을
+만들고 Teams에 알린다.</p>
+<h2 id="d5-패턴-4--플로봇--코봇-콜백">D5. 패턴 4 — 플로봇 → 코봇
+콜백</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>대부분은 정형 절차지만 중간에 예외 판단이나 자연어 처리가
+필요하다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>Workflow 안의 agent node로 코봇 또는 특정 에이전트에게 판단을
+맡긴다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>agent node 호출 조건을 좁게 잡는다. 무한 왕복, 불필요한 장기 추론,
+감사 누락을 피한다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>14장 Agent↔︎Workflow 엮기</td>
+</tr>
+</tbody>
+</table>
+<p>예: 접수된 요청을 Workflow가 분류하다가 설명이 모호한 경우에만
+코봇에게 “추가 확인 질문 1개”를 만들게 한다.</p>
+<h2 id="d6-패턴-5--트리거-자동화">D6. 패턴 5 — 트리거 자동화</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>사용자가 매번 말 걸지 않아도 일정·이벤트에 따라 일이 시작되어야
+한다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>일정, 이벤트, 다른 자동화 호출을 Trigger로 두고 Workflow/Agent가
+실행되게 한다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>무인 운영은 반드시 중단 장치, 실행 한도, 승인 게이트, Monitor 확인
+루틴이 있어야 한다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>15장 트리거, 20장 Monitor, 21장 거버넌스</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>자동화 예</th>
+<th>통제점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매주 월요일 오전 보고 초안 생성</td>
+<td>발송 전 사람 승인</td>
+</tr>
+<tr>
+<td>새 티켓 접수 시 요약</td>
+<td>민감도·고객 영향도에 따라 에스컬레이션</td>
+</tr>
+<tr>
+<td>예산 초과 감지</td>
+<td>금액 기준 이상은 자동 실행 중단</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d7-패턴-6--human-review-게이트">D7. 패턴 6 — Human review
+게이트</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>자동화는 필요하지만 최종 책임은 사람이 져야 한다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>Workflow 중간에 사람 검토·승인 단계를 둔다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>모든 단계에 승인을 넣으면 병목이 된다. 금액, 외부 발송, 법무·인사
+영향처럼 위험 지점에만 둔다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>13~15장 Workflows, 21장 거버넌스</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d8-패턴-7--knowledge-grounded-answer">D8. 패턴 7 —
+Knowledge-grounded answer</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>코봇이 일반 지식으로 그럴듯하게 답하면 안 되고, 회사 자료에 근거해야
+한다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>SharePoint, Dataverse, Documents, Enterprise data 등을 Knowledge로
+붙이고, 지침에 출처 기반 답변 원칙을 둔다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>Knowledge는 읽기 전용이다. 수정·등록·발송은 Tool이다. 내부 지식은
+사용자 권한을 따른다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>10장 지식과 기억, 부록 E3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d9-패턴-8--tool-first-action">D9. 패턴 8 — Tool-first
+action</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>사용자의 요청이 말로 끝나지 않고 실제 작업을 수행해야 한다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>기성 커넥터, REST API, Custom connector, MCP, Workflow를 Tool로
+제공한다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>도구 설명과 입력 스키마를 좁고 분명하게 쓴다. 쓰기 작업은
+확인·권한·감사 로그가 필요하다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>11장 도구, 부록 E4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d10-패턴-9--evaluate-first-개선-루프">D10. 패턴 9 —
+Evaluate-first 개선 루프</h2>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>내용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문제</td>
+<td>Preview에서 한두 번 잘 된 것만 보고 게시해 품질이 흔들린다.</td>
+</tr>
+<tr>
+<td>해법</td>
+<td>대표 질문·실패 질문·경계 질문을 테스트셋으로 만들고 Evaluate에서
+반복 측정한다.</td>
+</tr>
+<tr>
+<td>주의</td>
+<td>Skill description 수정, Knowledge 보강, Tool 설명 수정처럼 작은
+변경을 한 번에 하나씩 검증한다.</td>
+</tr>
+<tr>
+<td>관련 장</td>
+<td>16~18장 Preview/Evaluate</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d11-패턴-조합-예시">D11. 패턴 조합 예시</h2>
+<table>
+<thead>
+<tr>
+<th>업무</th>
+<th>추천 조합</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사내 워크숍 프로젝트 운영</td>
+<td>5스킬 분철 + Knowledge-grounded answer + 코봇→플로봇 핸드오프</td>
+</tr>
+<tr>
+<td>고객 문의 자동 요약</td>
+<td>Knowledge + ticket summarizer Skill + Tool-first action + Human
+review</td>
+</tr>
+<tr>
+<td>주간 경영 보고</td>
+<td>Trigger 자동화 + reporter Skill + Workflow 발송 + 승인 게이트</td>
+</tr>
+<tr>
+<td>예산 리스크 검토</td>
+<td>budget/risk 전문가 에이전트 분화 + 슈퍼호스트</td>
+</tr>
+<tr>
+<td>사내 시스템 등록</td>
+<td>Agent 판단 + REST/Custom connector + Monitor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d12-안티패턴">D12. 안티패턴</h2>
+<table>
+<thead>
+<tr>
+<th>안티패턴</th>
+<th>왜 위험한가</th>
+<th>대신</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>거대한 지침 하나</td>
+<td>수정할수록 서로 충돌</td>
+<td>Skill로 분철</td>
+</tr>
+<tr>
+<td>모든 것을 에이전트로 처리</td>
+<td>결정적 절차가 흔들림</td>
+<td>Workflow로 고정</td>
+</tr>
+<tr>
+<td>모든 것을 Workflow로 처리</td>
+<td>모호한 입력·예외에 약함</td>
+<td>agent node 또는 Agent 호출</td>
+</tr>
+<tr>
+<td>Tool 없이 “보냈다”고 말하게 함</td>
+<td>실제 실행·감사 없음</td>
+<td>커넥터/Workflow 사용</td>
+</tr>
+<tr>
+<td>Prompt를 신버전 기능처럼 설계</td>
+<td>클래식 개념 혼입</td>
+<td>Skill 또는 agent node로 재설계</td>
+</tr>
+<tr>
+<td>무인 트리거에 승인·중단 없음</td>
+<td>반복 사고 위험</td>
+<td>Human review, 한도, Monitor</td>
+</tr>
+<tr>
+<td>Connected agents 과다 연결</td>
+<td>책임·비용·평가 복잡</td>
+<td>소유권이 분명한 전문가만 연결</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d13-능력의-경계--copilot-studio로-안-되는-일">D13. 능력의 경계 —
+Copilot Studio로 안 되는 일</h2>
+<p>패턴만큼 중요한 것이 “여기서 멈춰야 하는 선”이다. 사례를 모아 보면
+상당수는 Copilot Studio만으로 끝나지 않는다. 이런 일은 코봇을
+<strong>프론트엔드·오케스트레이터로만</strong> 쓰고, 실제 처리는 전문
+스택에 맡긴다.</p>
+<table>
+<thead>
+<tr>
+<th>영역</th>
+<th>예시</th>
+<th>권장 대안</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>머신러닝 모델 훈련</td>
+<td>품질·수요·비용 예측, 노하우 학습</td>
+<td>Azure Machine Learning</td>
+</tr>
+<tr>
+<td>시계열 이상탐지</td>
+<td>설비 이상, 센서 패턴 감지</td>
+<td>Azure 이상 탐지 계열</td>
+</tr>
+<tr>
+<td>컴퓨터 비전</td>
+<td>실시간 영상 판독, 표면 결함 검사</td>
+<td>Azure Custom Vision 등</td>
+</tr>
+<tr>
+<td>설비 직접 제어(OT)</td>
+<td>공정 제어, 장비 쓰기 제어</td>
+<td>제어 시스템(DCS/PLC 등)</td>
+</tr>
+<tr>
+<td>하드웨어 자동화</td>
+<td>로봇·드론·설비 구동</td>
+<td>별도 엔지니어링</td>
+</tr>
+<tr>
+<td>정밀 신호처리</td>
+<td>정밀 계측·신호 분석</td>
+<td>전문 신호처리 라이브러리</td>
+</tr>
+</tbody>
+</table>
+<p><strong>판단 기준</strong> — “사람이 하려면 클릭·문서·대화로
+충분한가, 아니면 센서·제어·모델 훈련이 필요한가?” 후자라면 코봇
+단독으로는 안 된다. 코봇은 그 결과를 <strong>불러오고, 묻고, 알리고,
+사람 승인을 받는</strong> 입구로 둔다.</p>
+<blockquote>
+<p>D12가 “할 수 있지만 그렇게 하면 안 되는” 설계 실수라면, 이 절은
+“구조적으로 코봇의 영역이 아닌” 능력 경계다.</p>
+</blockquote>
+<h2 id="핵심-정리">핵심 정리</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>요점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>설계는 “판단인가, 절차인가, 행동인가, 독립 운영인가” 네 질문으로
+시작한다.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>코봇 예제의 기본 패턴은 5스킬 분철이다.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>전문성이 커지면 Connected agents로 분화하고 코봇은 슈퍼호스트가
+된다.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>코봇과 플로봇은 agent node와 도구 호출로 양방향 핸드오프한다.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>트리거 자동화는 통제점과 Monitor 없이는 운영 설계가 아니다.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+    </article>
+    <nav class="pager"><a class="pg pg-prev" href="appendix-c.html">← C. 치트시트</a><a class="pg pg-next" href="appendix-e.html">E. 능력 카탈로그 →</a></nav>
+  </main>
+</div>
+<script>
+  var t=document.getElementById('menuToggle'),s=document.getElementById('sidebar');
+  if(t){t.addEventListener('click',function(){s.classList.toggle('open');});}
+  // 부(Part) 접기/펼치기
+  document.querySelectorAll('.toc-part-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var li=btn.closest('.toc-part');
+      var open=li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open?'true':'false');
+    });
+  });
+</script>
+</body>
+</html>

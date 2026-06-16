@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="470" viewBox="0 0 980 470">
+<rect x="0" y="0" width="980" height="470" rx="20" fill="#fff" stroke="#E5E7EB" stroke-width="1.5"/>
+<text x="40" y="48" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="22" font-weight="800" fill="#1F2430">3장 — 두 갈래 길: Agent냐 Workflow냐</text>
+<rect x="330" y="70" width="320" height="46" rx="12" fill="#fff" stroke="#D1D5DB" stroke-width="2" />
+<text x="490" y="99" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="15" font-weight="700" fill="#1F2430" text-anchor="middle">"What do you want to build?"</text>
+<defs><marker id="ah580" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#2563EB"/></marker></defs><line x1="430" y1="118" x2="250" y2="150" stroke="#2563EB" stroke-width="2.5" marker-end="url(#ah580)"/>
+<defs><marker id="ah710" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0D9488"/></marker></defs><line x1="560" y1="118" x2="740" y2="150" stroke="#0D9488" stroke-width="2.5" marker-end="url(#ah710)"/>
+<rect x="60" y="155" width="400" height="270" rx="18" fill="#EFF4FF" stroke="#2563EB" stroke-width="2" />
+<text x="84" y="188" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="800" fill="#2563EB" text-anchor="start">코봇 — Agent</text>
+<text x="84" y="214" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="600" fill="#5B6472" text-anchor="start">생각하는 동료 · 판단이 운전</text>
+<text x="84" y="250" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#1F2430" text-anchor="start">• 목표를 받아 스스로 추론·행동</text>
+<text x="84" y="282" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#1F2430" text-anchor="start">• 유연 — 상황마다 다르게</text>
+<text x="84" y="314" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#1F2430" text-anchor="start">• 애매하고 새로운 일에 강함</text>
+<text x="84" y="400" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#2563EB" text-anchor="start">예: 리스크 판단 · 맞춤 보고</text>
+<rect x="520" y="155" width="400" height="270" rx="6" fill="#E9FBF7" stroke="#0D9488" stroke-width="2" />
+<text x="544" y="188" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="18" font-weight="800" fill="#0D9488" text-anchor="start">플로봇 — Workflow</text>
+<text x="544" y="214" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13.5" font-weight="600" fill="#5B6472" text-anchor="start">실행하는 동료 · 절차가 운전</text>
+<text x="544" y="250" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#1F2430" text-anchor="start">• 정해진 순서를 어김없이 집행</text>
+<text x="544" y="282" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#1F2430" text-anchor="start">• 결정적 — 같은 입력=같은 출력</text>
+<text x="544" y="314" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="14" font-weight="500" fill="#1F2430" text-anchor="start">• 틀리면 안 되는 절차에 강함</text>
+<text x="544" y="400" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="13" font-weight="700" fill="#0D9488" text-anchor="start">예: 정기 보고 발송 · 결재 라우팅</text>
+<defs><marker id="ah755" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1F2430"/></marker></defs><line x1="465" y1="290" x2="515" y2="290" stroke="#1F2430" stroke-width="2" marker-end="url(#ah755)"/>
+<defs><marker id="ah825" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#1F2430"/></marker></defs><line x1="515" y1="310" x2="465" y2="310" stroke="#1F2430" stroke-width="2" marker-end="url(#ah825)"/>
+<text x="490" y="335" font-family="'Malgun Gothic','Segoe UI','Apple SD Gothic Neo',sans-serif" font-size="11" font-weight="700" fill="#1F2430" text-anchor="middle">agent node</text>
+</svg>
