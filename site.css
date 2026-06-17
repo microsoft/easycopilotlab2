@@ -119,7 +119,9 @@ a:hover{text-decoration:underline;}
 
 /* 이미지 규칙 */
 .prose img{max-width:100%; height:auto;}
-.prose img[src*="-say-webtoon"]{height:1.5em; width:auto; vertical-align:-.35em; display:inline; margin:0 .25em 0 0;}
+.prose img[src*="-say-webtoon"]{height:5em; width:auto; vertical-align:-1.6em; display:inline; margin:0 .5em 0 0;}
+/* 코봇/플로봇 한마디 — 아이콘 있는 blockquote의 말 텍스트: 이탤릭 + 진한 파랑 */
+.prose blockquote:has(img[src*="-say-webtoon"]) p + p{font-style:italic; color:#1d4e89;}
 .prose img[src*="/webtoon/"],.prose img[src^="webtoon/"]{display:block; margin:1.2em auto; max-width:88%; border-radius:8px; box-shadow:0 2px 14px rgba(0,0,0,.12);}
 .prose img[src*="/diagrams/"]{display:block; margin:1.2em auto; max-width:96%;}
 
