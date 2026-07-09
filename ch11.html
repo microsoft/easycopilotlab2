@@ -90,8 +90,8 @@
 </li>
 </ul>
     <div class="side-meta">
-      <span class="ver">v2.9</span>
-      <span class="upd">최종 수정 2026-06-17</span>
+      <span class="ver">v2.10</span>
+      <span class="upd">최종 수정 2026-07-09</span>
     </div>
   </aside>
   <main class="content">
@@ -161,8 +161,8 @@ Dataverse 레코드 처리</td>
 <tr>
 <td><strong>MCP(Model Context Protocol)</strong></td>
 <td>여러 도구와 리소스를 묶어 동적으로 제공</td>
-<td>Dataverse MCP로 테이블 조회·설명·쿼리, Work IQ Mail/Calendar/Teams
-MCP로 업무 맥락 활용</td>
+<td>Dataverse MCP로 테이블 조회·설명·쿼리, 사내 커스텀 MCP 서버로 업무
+시스템 연동</td>
 </tr>
 <tr>
 <td><strong>Workflows</strong></td>
@@ -374,7 +374,7 @@ Dataverse MCP 서버에 테이블 생성·수정·삭제 같은 강한 권한이
 선택한다.</li>
 <li><strong>Model Context Protocol</strong>을 고른다.</li>
 <li>사용 가능한 MCP 커넥터 목록에서 필요한 서버를 선택한다. 예:
-Dataverse MCP, Work IQ Mail MCP.</li>
+Dataverse MCP, 사내 커스텀 MCP 서버.</li>
 <li>연결을 인증한다.</li>
 <li><strong>Add and configure</strong>를 누른다.</li>
 <li>MCP 서버 설정에서 제공되는 <strong>Tools</strong>와
@@ -382,6 +382,14 @@ Dataverse MCP, Work IQ Mail MCP.</li>
 <li>필요 없는 도구를 끄고, 이름·설명을 보강한다.</li>
 <li>Preview에서 실제로 어떤 MCP tool이 호출되는지 확인한다.</li>
 </ol>
+<blockquote>
+<p><strong>10장과 헷갈리지 않기</strong><br />
+메일·일정·Teams·OneDrive 같은 M365 업무 맥락(Work IQ)은 이 Tools/MCP
+목록에서 하나씩 붙이는 것이 아니라, Build 탭의 <strong>Microsoft
+IQ</strong> 버튼에서 소스를 켜는 것이 기본 경로다(10장). 여기 MCP는
+Dataverse나 사내 시스템처럼 내가 직접 고른 도구 상자를 붙이는 절차로
+이해한다.</p>
+</blockquote>
 <p>코봇의 프로젝트 예제로는 Dataverse MCP가 잘 어울린다.
 <code>Project Register</code> 테이블에서 워크숍 예산 한도와 승인 상태를
 읽고, 승인 완료 후 상태를 바꾸는 식이다. 단, 읽기와 쓰기는 권한과 위험이

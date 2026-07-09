@@ -90,8 +90,8 @@
 </li>
 </ul>
     <div class="side-meta">
-      <span class="ver">v2.9</span>
-      <span class="upd">최종 수정 2026-06-17</span>
+      <span class="ver">v2.10</span>
+      <span class="upd">최종 수정 2026-07-09</span>
     </div>
   </aside>
   <main class="content">
@@ -131,8 +131,15 @@
 </tr>
 <tr>
 <td>Knowledge</td>
-<td>답변 근거 자료</td>
+<td>내가 고른 특정 소스의 정적 근거 자료</td>
 <td>SharePoint, Dataverse, Documents</td>
+<td>10장</td>
+</tr>
+<tr>
+<td>Microsoft IQ</td>
+<td>사용자 맥락·권한 기반 동적 M365/비즈니스/지식베이스 접근</td>
+<td>Work IQ(Mail·Calendar·Teams·OneDrive and SharePoint 등), Fabric IQ,
+Foundry IQ</td>
 <td>10장</td>
 </tr>
 <tr>
@@ -333,58 +340,88 @@ Skill은 행동이 아니라 산출물 생성 단위로 정의한다. “메일 
 이름이 아니라 Tool/Workflow 설계다.</p>
 </blockquote>
 <h2 id="e4-knowledge-sources-요약">E4. Knowledge sources 요약</h2>
-<p>Microsoft Learn의 Knowledge sources summary 기준으로, Copilot
-Studio는 에이전트가 Power Platform, Dynamics 365, 웹사이트, 외부
-시스템의 데이터를 근거로 답하게 할 수 있다. 내부 지식은 사용자의
-Microsoft Entra ID 권한을 따르며, 코봇이 권한을 우회하지 않는다.</p>
+<p>Copilot Studio 새 에이전트 경험은 에이전트가 웹사이트, SharePoint,
+Dataverse, Azure AI Search, 그리고 ServiceNow·Confluence·Jira·Azure
+DevOps 같은 Copilot connectors의 데이터를 근거로 답하게 할 수 있다. 내부
+지식은 사용자의 Microsoft Entra ID 권한을 따르며, 코봇이 권한을 우회하지
+않는다. <strong>Add knowledge</strong> 대화상자는 소스를
+Featured/Advanced 탭과 업로드 영역으로 나눠 보여준다.</p>
 <table>
 <thead>
 <tr>
 <th>지식 소스</th>
+<th>분류</th>
 <th>내부/외부</th>
 <th>무엇을 하나</th>
-<th>2026년 기준 generative mode 입력 한도</th>
 <th>인증</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Public website</td>
+<td>Featured</td>
 <td>외부</td>
 <td>지정 웹사이트를 Bing으로 검색</td>
-<td>최대 25개 웹사이트</td>
 <td>없음</td>
 </tr>
 <tr>
-<td>Documents</td>
+<td>Uploaded documents</td>
+<td>업로드 영역</td>
 <td>내부</td>
-<td>Dataverse에 업로드한 문서 검색</td>
-<td>모든 문서</td>
+<td>Dataverse에 업로드한 문서 검색(PDF·Word·Excel·PowerPoint 등)</td>
 <td>없음/환경 권한</td>
 </tr>
 <tr>
 <td>SharePoint</td>
+<td>Featured</td>
 <td>내부</td>
-<td>SharePoint URL을 Graph Search로 검색</td>
-<td>최대 25개 URL</td>
+<td>사이트·라이브러리·특정 파일을 검색</td>
+<td>사용자 Entra ID</td>
+</tr>
+<tr>
+<td>ServiceNow</td>
+<td>Featured</td>
+<td>내부</td>
+<td>지식베이스 문서를 검색</td>
+<td>사용자 Entra ID</td>
+</tr>
+<tr>
+<td>Confluence</td>
+<td>Advanced</td>
+<td>내부</td>
+<td>워크스페이스 지식베이스 문서를 검색</td>
+<td>사용자 Entra ID</td>
+</tr>
+<tr>
+<td>Copilot connectors(Jira·Azure DevOps Work Items 등)</td>
+<td>Advanced</td>
+<td>내부</td>
+<td>비Microsoft 서비스 데이터를 Microsoft 365용으로 색인해 검색</td>
 <td>사용자 Entra ID</td>
 </tr>
 <tr>
 <td>Dataverse</td>
+<td>Advanced</td>
 <td>내부</td>
 <td>Dataverse 테이블을 RAG 방식으로 검색</td>
-<td>제한 없음</td>
 <td>사용자 Entra ID</td>
 </tr>
 <tr>
-<td>Enterprise data using connectors</td>
-<td>내부</td>
-<td>Microsoft Search로 색인된 커넥터 데이터 검색</td>
-<td>제한 없음</td>
-<td>사용자 Entra ID</td>
+<td>Azure AI Search</td>
+<td>Advanced</td>
+<td>내부/외부</td>
+<td>이미 구축한 Azure AI Search 인덱스를 검색</td>
+<td>서비스 연결</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>2026년 기준 주의</strong> — 입력 개수·파일 크기 같은 정확한
+한도는 소스·테넌트·라이선스에 따라 다르고 자주 바뀐다. 이 표는 “어떤
+소스가 있는가”를 보는 용도로 쓰고, 정확한 숫자는 게시 전 <strong>Add
+knowledge</strong> 화면과 공식 문서에서 재확인한다. 클래식 경험의 소스
+구성과 세부 수치는 부록 A를 참고한다.</p>
+</blockquote>
 <h3 id="knowledge-운영-규칙">Knowledge 운영 규칙</h3>
 <table>
 <thead>
@@ -407,20 +444,14 @@ Microsoft Entra ID 권한을 따르며, 코봇이 권한을 우회하지 않는�
 <td>지식 소스가 많으면 설명(description)이 선택 품질에 영향을 준다.</td>
 </tr>
 <tr>
-<td>25개 초과 필터링</td>
-<td>generative orchestration에서 지식 소스가 25개를 넘으면 내부 모델이
-설명을 바탕으로 관련 소스를 필터링한다. 업로드 파일은 이 25개 검색
-제한에 포함되지 않는다고 Learn은 설명한다.</td>
+<td>소스 필터링</td>
+<td>지식 소스가 많아지면 오케스트레이션 런타임이 설명을 바탕으로 관련
+소스를 걸러 찾는다. 소스 설명이 흐리면 필터링 품질도 떨어진다.</td>
 </tr>
 <tr>
 <td>Web Search</td>
 <td>별도 설정으로 공개 웹 검색을 사용할 수 있다. 조직 정책과 데이터
 경계를 확인한다.</td>
-</tr>
-<tr>
-<td>Work IQ</td>
-<td>SharePoint 등 조직 데이터 검색 품질을 높일 수 있다. M365 Copilot
-라이선스·Semantic index·Microsoft 인증 조건을 확인한다.</td>
 </tr>
 </tbody>
 </table>
@@ -434,10 +465,6 @@ Microsoft Entra ID 권한을 따르며, 코봇이 권한을 우회하지 않는�
 </thead>
 <tbody>
 <tr>
-<td>Work IQ 사용 시</td>
-<td>Learn은 SharePoint와 커넥터 파일 최대 200MB 지원을 설명한다.</td>
-</tr>
-<tr>
 <td>특정 파일 형식</td>
 <td>SharePoint와 Microsoft Copilot connectors는 PDF/PPTX/DOCX에 대해
 최대 512MB 지원 설명이 있다.</td>
@@ -449,6 +476,123 @@ Microsoft Entra ID 권한을 따르며, 코봇이 권한을 우회하지 않는�
 </tr>
 </tbody>
 </table>
+<h2 id="e4-1-microsoft-iq-카탈로그">E4-1. Microsoft IQ 카탈로그</h2>
+<p>Knowledge가 “내가 고른 특정 소스”라면, <strong>Microsoft
+IQ</strong>는 Build 탭의 별도 버튼에서 켜는 “사용자 맥락에 따라 동적으로
+열리는 조직 데이터”다. 10장에서 다룬 구분을 표로 다시 정리한다.</p>
+<table>
+<thead>
+<tr>
+<th>구분</th>
+<th>Knowledge</th>
+<th>Microsoft IQ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>데이터 성격</td>
+<td>정적·준정적 콘텐츠</td>
+<td>동적인 Microsoft 365 조직 데이터</td>
+</tr>
+<tr>
+<td>설정 방법</td>
+<td>소스를 하나하나 골라 연결</td>
+<td>소스를 켜고 끄는 토글</td>
+</tr>
+<tr>
+<td>범위</td>
+<td>내가 지정한 특정 문서·사이트</td>
+<td>사용자가 접근 가능한 M365 데이터 전체</td>
+</tr>
+<tr>
+<td>할 수 있는 일</td>
+<td>읽기만(read-only)</td>
+<td>읽기 + 행동(메일 초안 작성 등)</td>
+</tr>
+</tbody>
+</table>
+<p>Microsoft IQ의 세 축:</p>
+<table>
+<thead>
+<tr>
+<th>축</th>
+<th>무엇을 비추나</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Work IQ</td>
+<td>메일·채팅·파일·업무 활동 — M365 협업 신호</td>
+<td>미리보기</td>
+</tr>
+<tr>
+<td>Fabric IQ</td>
+<td>Microsoft Fabric의 비즈니스 데이터·분석(OneLake, Power BI 시맨틱
+모델, 온톨로지)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Foundry IQ</td>
+<td>Azure AI Search로 색인한 엔터프라이즈 지식베이스</td>
+<td>미리보기</td>
+</tr>
+</tbody>
+</table>
+<p>Work IQ 세부 소스 7종과 기본값:</p>
+<table>
+<thead>
+<tr>
+<th>Work IQ 소스</th>
+<th>코봇이 할 수 있는 일</th>
+<th>기본값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mail</td>
+<td>메일함 검색, 메일 읽기, 답장 초안 작성</td>
+<td>꺼짐</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>일정 조회, 회의 시간 확인</td>
+<td>꺼짐</td>
+</tr>
+<tr>
+<td>Teams</td>
+<td>Teams 메시지·채널 검색</td>
+<td>꺼짐</td>
+</tr>
+<tr>
+<td>OneDrive and SharePoint</td>
+<td>OneDrive·SharePoint 파일 검색·참조</td>
+<td>꺼짐</td>
+</tr>
+<tr>
+<td>User profile and people</td>
+<td>조직도·담당자 정보 조회</td>
+<td>켜짐</td>
+</tr>
+<tr>
+<td>Microsoft 365 Copilot Search</td>
+<td>M365 전반에 걸친 통합 검색</td>
+<td>켜짐</td>
+</tr>
+<tr>
+<td>SharePoint Lists</td>
+<td>SharePoint 목록 데이터 조회</td>
+<td>꺼짐</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>운영 메모</strong> — Work IQ MCP 서버(Agent 365 MCP
+게이트웨이 경유)를 Tools에서 직접 붙이는 고급 경로도 있지만, 새 경험의
+기본 경로는 Build 탭의 <strong>Microsoft IQ</strong> 버튼이다. Work
+IQ·Foundry IQ는 Microsoft 365 Copilot 라이선스·관리자 동의 등 거버넌스
+조건의 영향을 받는다(21장).</p>
+</blockquote>
 <h2 id="e5-knowledge-선택-가이드">E5. Knowledge 선택 가이드</h2>
 <table>
 <thead>
@@ -481,8 +625,13 @@ Microsoft Entra ID 권한을 따르며, 코봇이 권한을 우회하지 않는�
 </tr>
 <tr>
 <td>Jira·ServiceNow·Confluence 등</td>
-<td>Enterprise data connector</td>
-<td>Microsoft Search 색인 활용</td>
+<td>Copilot connectors</td>
+<td>비Microsoft 서비스 데이터를 색인해 활용</td>
+</tr>
+<tr>
+<td>최근 메일·일정·Teams·OneDrive 맥락</td>
+<td>Microsoft IQ(Work IQ)</td>
+<td>내가 소스를 고르지 않아도 사용자 맥락에 따라 동적으로 검색</td>
 </tr>
 <tr>
 <td>사용자 선호·반복 맥락</td>
